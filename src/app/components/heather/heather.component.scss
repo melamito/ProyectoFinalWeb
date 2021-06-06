@@ -1,0 +1,40 @@
+.categoria{
+    display: inline-flex;
+}
+.tipo{
+    text-decoration: none;
+    font-weight: bold;
+    color:#F2A663;
+    font-size:20px;
+}
+.subcategoria{
+    padding-left: 3px;
+    padding-right:3px;
+    background-color:#F2F2F2;
+    color:#F2A663;
+}
+.lista{
+    list-style: none;
+}
+
+.estiloLetras{
+    background-color: black;
+    color:white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.centro{
+    width: 60%;
+}
+.marca{
+    height: 86%;
+    background-color: black;
+    color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+}
+.estiloLetras:hover{
+    background-color:#F2F2F2;
+    color:#F2A663;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
