@@ -1,62 +1,64 @@
-<ul ngbNav #nav="ngbNav" class="nav-tabs" class="menu">
-    <li ngbNavItem>
-      <a ngbNavLink class="estiloLetras">Home</a>
-      <ng-template ngbNavContent>Aqui debe estar la pagina principal</ng-template>
-    </li>
-    <li ngbNavItem>
-      <a ngbNavLink class="estiloLetras">Categorias</a>
-      <ng-template ngbNavContent>
-        <ul ngbNav #nav="ngbNav" class="nav-tabs" class="categoria">
-            <li ngbNavLink class="subcategoria">
-                <a class="tipo">Mujer</a>
-                <ul class="lista">
-                  <li >Poleras</li>
-                  <li >Polerones</li>
-                  <li>Pantalones</li>
-                  <li>Zapatos</li>
-                  <li>Accesorios</li>
-                  <li>Ver todo Mujer</li>
-                </ul>
-            </li>
-            <li ngbNavLink class="subcategoria">
-                <a class="tipo">Hombre</a>
-                <ul class="lista">
-                  <li>Poleras</li>
-                  <li>Polerones</li>
-                  <li>Pantalones</li>
-                  <li>Zapatos</li>
-                  <li>Accesorios</li>
-                  <li>Ver todo Hombre</li>
-                </ul>
-            </li>
-            <li ngbNavLink class="subcategoria">
-                <a class="tipo">Niñes</a>
-                <ul class="lista">
-                  <li>Poleras</li>
-                  <li>Polerones</li>
-                  <li>Pantalones</li>
-                  <li>Zapatos</li>
-                  <li>Accesorios</li>
-                  <li>Ver todo Niñes</li>
-                </ul>
-            </li>
-        </ul>
-      </ng-template>
-    </li>
-    <li ngbNavItem>
-        <a ngbNavLink class="estiloLetras">Sale</a>
-        <ng-template ngbNavContent>Aquí deben estar los articulos en oferta</ng-template>
-    </li>
-    <li ngbNavItem class="centro">
-      <a ngbNavLink class="marca">CROWN</a>
-    </li>
-    <!--Aqui debe ir la barra del buscador-->
-    <li ngbNavItem>
-      <a ngbNavLink class="estiloLetras">Iniciar sesión</a>
-      <ng-template ngbNavContent>Aquí deberia estar el "formulario" para iniciar sesión</ng-template>
-    </li>
-    <li ngbNavItem>
-      <a ngbNavLink class="estiloLetras">Carrito de compras</a>
-    </li>
-  </ul>
-  <div [ngbNavOutlet]="nav"></div>
+<nav>
+    <ul ngbNav #nav="ngbNav" class="nav-tabs" class="menu">
+        <li ngbNavItem>
+          <a ngbNavLink class="estiloLetras">Home</a>
+          <ng-template ngbNavContent>Aqui debe estar la pagina principal</ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink class="estiloLetras">Categorias</a>
+          <ng-template ngbNavContent>
+            <ul ngbNav #nav="ngbNav" class="nav-tabs" class="categoria">
+                <li ngbNavLink class="subcategoria">
+                    <a class="tipo">Mujer</a>
+                    <ul class="lista">
+                      <li >Poleras</li>
+                      <li >Polerones</li>
+                      <li>Pantalones</li>
+                      <li>Zapatos</li>
+                      <li>Accesorios</li>
+                      <li>Ver todo Mujer</li>
+                    </ul>
+                </li>
+                <li ngbNavLink class="subcategoria">
+                    <a class="tipo">Hombre</a>
+                    <ul class="lista">
+                      <li>Poleras</li>
+                      <li>Polerones</li>
+                      <li>Pantalones</li>
+                      <li>Zapatos</li>
+                      <li>Accesorios</li>
+                      <li>Ver todo Hombre</li>
+                    </ul>
+                </li>
+                <li ngbNavLink class="subcategoria">
+                    <a class="tipo">Niñes</a>
+                    <ul class="lista">
+                      <li>Poleras</li>
+                      <li>Polerones</li>
+                      <li>Pantalones</li>
+                      <li>Zapatos</li>
+                      <li>Accesorios</li>
+                      <li>Ver todo Niñes</li>
+                    </ul>
+                </li>
+            </ul>
+          </ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink class="estiloLetras">Sale</a>
+            <ng-template ngbNavContent>Aquí deben estar los articulos en oferta</ng-template>
+        </li>
+        <li ngbNavItem class="centro">
+          <a ngbNavLink class="marca">CROWN</a>
+        </li>
+        <!--Aqui debe ir la barra del buscador-->
+        <li ngbNavItem>
+          <a ngbNavLink class="estiloLetras">Iniciar sesión</a>
+          <ng-template ngbNavContent>Aquí deberia estar el "formulario" para iniciar sesión</ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink class="estiloLetras">Carrito de compras</a>
+        </li>
+      </ul>
+      <div [ngbNavOutlet]="nav"></div>
+</nav>
