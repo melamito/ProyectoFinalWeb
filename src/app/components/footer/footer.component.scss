@@ -1,0 +1,31 @@
+.footer{
+    background-color:black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+li{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.listaSecundaria{
+    list-style: none;
+}
+.lista{
+    list-style: none;
+    display: inline-flex;
+    width: 100%;
+}
+.letras{
+    padding-top:7%;
+    color: #F2F2F2;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+}
+.letras:hover{
+    color:#F2A663;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#logo{
+    padding-top:7%;
+}
