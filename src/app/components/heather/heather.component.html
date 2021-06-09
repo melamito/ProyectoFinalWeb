@@ -1,8 +1,7 @@
-<nav>
+<nav class="header">
     <ul ngbNav #nav="ngbNav" class="nav-tabs" class="menu">
         <li ngbNavItem>
-          <a ngbNavLink class="estiloLetras">Home</a>
-          <ng-template ngbNavContent>Aqui debe estar la pagina principal</ng-template>
+          <a [routerLink]="['/']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Home</a></a>
         </li> 
         <li ngbNavItem>
           <a ngbNavLink class="estiloLetras">Categorias</a>
@@ -13,7 +12,7 @@
                     <ul class="lista">
                       <li >Poleras</li>
                       <li >Polerones</li>
-                      <li>Pantalones</li>
+                      <li>Pantalones</li> 
                       <li>Zapatos</li>
                       <li>Accesorios</li>
                       <li>Ver todo Mujer</li>
@@ -49,15 +48,14 @@
             <ng-template ngbNavContent>Aquí deben estar los articulos en oferta</ng-template>
         </li>
         <li ngbNavItem class="centro">
-          <a ngbNavLink class="marca">CROWN</a>
+          <a [routerLink]="['/']" routerLinkActive="router-link-active" ><a ngbNavLink class="marca">CROWN</a></a>
         </li>
         <!--Aqui debe ir la barra del buscador-->
         <li ngbNavItem>
-          <a ngbNavLink class="estiloLetras">Iniciar sesión</a>
-          <ng-template ngbNavContent>Aquí deberia estar el "formulario" para iniciar sesión</ng-template>
+          <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Iniciar sesión</a></a>
         </li>
         <li ngbNavItem>
-          <a ngbNavLink class="estiloLetras">Carrito de compras</a>
+          <a ngbNavLink class="estiloLetras"><i class="fas fa-shopping-cart"></i></a>
         </li>
       </ul>
       <div [ngbNavOutlet]="nav"></div>

@@ -1,17 +1,23 @@
+.header{
+    background-color: black;
+    height: 40px;
+}
 .categoria{
     display: inline-flex;
+    position: absolute;
+    z-index: 100;
 }
 .tipo{
     text-decoration: none;
     font-weight: bold;
-    color:#F2A663;
+    color:#ee852a;
     font-size:20px;
 }
 .subcategoria{
-    padding-left: 3px;
+    padding-left: 3px; 
     padding-right:3px;
     background-color:#F2F2F2;
-    color:#F2A663;
+    color:#ee852a;
 }
 .lista{
     list-style: none;
