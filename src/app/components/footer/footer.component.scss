@@ -16,15 +16,23 @@ li{
     display: inline-flex;
     width: 100%;
 }
+.titulo{
+    padding-top: 7%;
+    color:#F2F2F2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+}
 .letras{
     padding-top:7%;
     color: #F2F2F2;
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: left;
+    text-decoration: none;
 }
 .letras:hover{
     color:#F2A663;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
 }
 #logo{
     padding-top:7%;
