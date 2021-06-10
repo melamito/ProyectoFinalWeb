@@ -4,3 +4,28 @@ ngb-carousel{
     margin-top:3%;
     margin-bottom: 3%;
 }
+
+#productos{
+    list-style-type: none; 
+}
+
+.cuadricula{
+    margin:5%;
+    display:flex;
+    flex-direction: row;
+}
+
+.cuadricula li p{
+    text-align: center;
+    font-weight: bold;
+}
+
+.stock{
+    width: 70%;
+    align-items: center;
+    align-content: center;
+}
+
+.imagen{
+    width: 100%;
+}

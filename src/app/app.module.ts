@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HomeComponent } from './components/home/home.component';
     HeatherComponent,
     FooterComponent,
     InicioSesionComponent,
-    HomeComponent
+    HomeComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,

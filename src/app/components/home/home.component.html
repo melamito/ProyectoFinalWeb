@@ -1,3 +1,5 @@
+
+<!----------- Carrusel ----------->
 <ngb-carousel *ngIf="images">
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
@@ -24,3 +26,19 @@
         <h3>Third slide label</h3>
         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
       </div>-->
+
+
+<!------ Lista de los productos todos mezclados ------>
+<ul id=productos>
+   <div class=cuadricula>
+    <li *ngFor="let item of Lista">
+        <img src="{{item.imagen}}" class=imagen>
+        <p>{{item.nombre}}</p>
+        <p>${{item.precio}}</p>
+        <div class="stock">
+            <a [routerLink]="['/producto']" routerLinkActive="router-link-active"><button *ngIf="item.cantidad>0">Detalles</button></a> 
+            <span *ngIf="item.cantidad==0" class="me">No disponible</span>
+        </div>  
+    </li>
+  </div>
+</ul>
