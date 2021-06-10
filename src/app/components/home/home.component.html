@@ -29,16 +29,15 @@
 
 
 <!------ Lista de los productos todos mezclados ------>
-<ul id=productos>
-   <div class=cuadricula>
-    <li *ngFor="let item of Lista">
+
+<ul id=productos>  
+    <li *ngFor="let item of Lista" class="cuadricula">
         <img src="{{item.imagen}}" class=imagen>
         <p>{{item.nombre}}</p>
         <p>${{item.precio}}</p>
         <div class="stock">
             <a [routerLink]="['/producto']" routerLinkActive="router-link-active"><button *ngIf="item.cantidad>0">Detalles</button></a> 
             <span *ngIf="item.cantidad==0" class="me">No disponible</span>
-        </div>  
+        </div>
     </li>
-  </div>
 </ul>
