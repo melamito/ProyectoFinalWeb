@@ -1,0 +1,36 @@
+<div class="contenedor">
+    <!--Este es el formulario de contacto-->
+    <form class="formulario">
+        <!--Este es el titulo-->
+        <div class="form-group"><h1 class="titulo">Formulario de contacto</h1></div><br>
+        <!--Tipo de solicitud-->
+        <div class="form-group">
+            <label for="solicitud">Solicitud</label><br>
+            <select>
+                <option>Selecciona una solicitud</option>
+                <option>Consulta</option>
+                <option>Reclamo</option>
+            </select>
+        </div>
+        <!--Aqui se identifica al cliente con nombre y apellido-->
+        <div class="form-group">
+            <label for="identificacion">Nombre y Apellido</label><br>
+            <input id="identificacion" type="text" maxlength="30" required="true">
+        </div>
+        <!--Aqui va el numero de telefono del cliente-->
+        <div class="form-group">
+            <label for="telefono">Teléfono</label><br>
+            <input id="telefono" type="tel" placeholder="987654321" maxlength="9" required="true">
+        </div>
+        <!--Aqui va el correo electronico del cliente-->
+        <div class="form-group">
+            <label for="mail">Correo Electronico</label><br>
+            <input id="mail" type="email" placeholder="example@crown.cl" maxlength="20" requiered="true">
+        </div>
+        <!--Aqui va el mensaje del cliente-->
+        <div class="form-group">
+            <label for="comentario">Comentario</label><br>
+            <textarea id="comentario"></textarea>
+        </div>
+    </form>
+</div>

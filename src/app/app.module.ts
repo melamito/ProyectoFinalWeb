@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { QuieneSomosComponent } from './components/quiene-somos/quiene-somos.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { QuieneSomosComponent } from './components/quiene-somos/quiene-somos.com
     InicioSesionComponent,
     HomeComponent,
     ProductoComponent,
-    QuieneSomosComponent
+    QuieneSomosComponent,
   ],
   imports: [
     BrowserModule,
