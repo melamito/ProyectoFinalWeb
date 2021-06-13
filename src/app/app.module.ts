@@ -10,6 +10,7 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
 import { HomeComponent } from './components/home/home.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { QuieneSomosComponent } from './components/quiene-somos/quiene-somos.component';
+import { CategoriaComponent } from './components/categoria/categoria.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { QuieneSomosComponent } from './components/quiene-somos/quiene-somos.com
     HomeComponent,
     ProductoComponent,
     QuieneSomosComponent,
+    CategoriaComponent,
   ],
   imports: [
     BrowserModule,

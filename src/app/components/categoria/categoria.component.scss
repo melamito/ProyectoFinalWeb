@@ -1,0 +1,47 @@
+#productos{
+    list-style-type: none; 
+    margin-left: 10%;
+    width: 80%;
+    padding:0px;
+}
+
+
+.cuadricula{
+    width: 25%;
+    padding:2.5%;
+    display: inline-block;
+}
+
+.cuadricula p{
+    text-align: center;
+    font-weight: bold;
+}
+
+.stock{
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.imagen{
+    width: 100%;
+}
+
+button{
+    background-color: rgb(151, 96, 32);
+    color:white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: rgb(76, 76, 76);
+    color:white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.titulo{
+    width: 100%;
+    text-align: center;
+}

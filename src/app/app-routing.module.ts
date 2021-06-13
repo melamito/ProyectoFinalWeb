@@ -4,14 +4,16 @@ import { InicioSesionComponent} from '../app/components/inicio-sesion/inicio-ses
 import { HomeComponent} from '../app/components/home/home.component'
 import { ProductoComponent} from '../app/components/producto/producto.component';
 import { QuieneSomosComponent} from '../app/components/quiene-somos/quiene-somos.component'
-import {ContactoComponent} from '../app/components/contacto/contacto.component'
+import { ContactoComponent} from '../app/components/contacto/contacto.component'
+import { CategoriaComponent } from '../app/components/categoria/categoria.component'
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'sesion',component:InicioSesionComponent},
   {path:'producto/:id',component:ProductoComponent},
   {path:'nosotros',component:QuieneSomosComponent},
-  {path:'contacto',component:ContactoComponent}
+  {path:'contacto',component:ContactoComponent},
+  {path:'categoria/:sexo/:cat',component:CategoriaComponent}
 ];
 
 @NgModule({

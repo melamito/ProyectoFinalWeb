@@ -19,7 +19,6 @@ export class ProductoComponent implements OnInit {
   ngOnInit(): void {
     this.ruta=this.route.params.subscribe(parametro=>{
       this.id=parametro['id'];
-      console.log(this.id)
     });
   }
 
