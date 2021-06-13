@@ -1,1 +1,25 @@
-<p>producto works!</p>
+<div *ngFor="let producto of Productos" id="pagina">
+    <div *ngIf="producto.id==id" class="producto">
+        <!----- Parte izquierda de la pantalla ----->
+        <div class="mitad izquierda">
+            <img *ngIf="producto.id==id" src="{{producto.imagen}}" class=imagen>
+        </div>
+        <!----- Parte derecha de la pantalla -----> 
+        <div class="mitad derecha">
+            <!------ Nombre del producto ------>
+            <div class="texto titulo">{{producto.nombre}}</div>
+            <!------ Puntuacion ------>
+            <ngb-rating [(rate)]="producto.puntuacion" [readonly]="true" [max]="5"></ngb-rating>
+            <!------ Precio del producto ------>
+            <div class="texto precio">${{producto.precio}}</div>
+            <div id="avisos">
+                <!------ pocas unidades solo aparece si el stock es <=2 ------>
+                <div class="texto poco" *ngIf="producto.cantidad <=2 && producto.cantidad>0" >¡Ultimas unidades!</div>
+                <!------ Si no hay disponibles ------>
+                <div class="texto aviso" *ngIf="producto.cantidad ==0">Producto no disponible!</div>
+                <!------ boton agregar al carrito ------>
+                <button *ngIf="producto.cantidad>0">+Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>

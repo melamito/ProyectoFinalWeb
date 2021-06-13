@@ -36,7 +36,7 @@
         <p>{{item.nombre}}</p>
         <p>${{item.precio}}</p>
         <div class="stock">
-            <a [routerLink]="['/producto']" routerLinkActive="router-link-active"><button *ngIf="item.cantidad>0">Detalles</button></a> 
+            <a [routerLink]="['/producto',item.id]" routerLinkActive="router-link-active"><button *ngIf="item.cantidad>0">Detalles</button></a> 
             <span *ngIf="item.cantidad==0" class="me">No disponible</span>
         </div>
     </li>

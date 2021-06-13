@@ -1,0 +1,63 @@
+#pagina{
+    --AltoImagen : 308px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding:0px;
+}
+
+.producto{
+    width: 80%;
+    margin:3% 10% 3% 10%;
+}
+
+.mitad{
+    width: 50%;
+    height: inherit;
+    display: inline-block;
+    position: relative;
+}
+
+.imagen{
+    width: 90%;
+    margin: 5%;
+}
+
+.derecha{
+    height: 100%;
+    align-items: center;
+}
+
+.texto{
+    font-weight: bold;
+    font-size: 200%;
+}
+
+ngb-rating{
+    width: 100%;
+}
+
+#avisos{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color:red;
+}
+
+.poco{
+    font-size: 100%;
+}
+
+button{
+    margin-top: 2%;
+    padding:2%;
+    width: 50%;
+    background-color: black;
+    color:white;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: rgb(76, 76, 76);
+}

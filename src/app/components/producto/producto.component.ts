@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import {Producto,ListaProductos} from '../../interfaces/producto';
 
 @Component({
   selector: 'app-producto',
@@ -9,11 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductoComponent implements OnInit {
 
-  constructor(private rta:ActivatedRoute) { }
+  Productos=ListaProductos;
+
+  constructor(private route:ActivatedRoute) { }
   ruta:any;
   id:number=0;
+
+  
   ngOnInit(): void {
-    this.ruta=this.rta.params.subscribe(parametro=>{
+    this.ruta=this.route.params.subscribe(parametro=>{
       this.id=parametro['id'];
       console.log(this.id)
     });

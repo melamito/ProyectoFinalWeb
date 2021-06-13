@@ -56,7 +56,7 @@ export const ListaProductos:Array<Producto>=
     {
         id:5,
         nombre:"Bota Comfy Recién Nacida Beige",
-        cantidad:2,
+        cantidad:1,
         precio:11990,
         imagen:"../../assets/productos/5.png",
         categoria:3,
