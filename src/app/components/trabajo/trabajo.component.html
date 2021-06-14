@@ -1,0 +1,77 @@
+<div class="contenedor">
+    <!--Este es el formulario de contacto-->
+    <form class="formulario">
+        <!--Este es el titulo-->
+        <div class="form-group"><h1 class="titulo">Formulario de postulación</h1></div><br>
+        <!--Aqui va el nombre-->
+        <div class="form-group">
+            <label for="identificacion">Nombre y Apellidos</label>
+            <input id="identificacion" type="text" maxlength="30" requiered="true">
+        </div>
+        <!--Aqui va su correo-->
+        <div class="form-group">
+            <label for="mail">Correo Electronico</label><br>
+            <input id="mail" type="email" placeholder="example@crown.cl" maxlength="20" requiered="true">
+        </div>
+        <!--Aqui va el telefono de contacto-->
+        <div class="form-group">
+            <label for="telefono">Teléfono</label><br>
+            <input id="telefono" type="tel" placeholder="987654321" maxlength="9" required="true">
+        </div>
+        <!--Aqui va en que tienda desea trabajar-->
+        <div class="form-group">
+            <label for="tienda">Tienda a la que desea postular</label>
+            <select>
+                <option>--Tienda</option>
+                <option>Crown, Mall Buin</option>
+                <option>Crown, Mall Macul</option>
+                <option>Crown, Mall Quillota</option>
+                <option>Crown Casa Matriz Vitacura</option>
+            </select>
+        </div>
+        <!--Aqui va el cargo al que se postula-->
+        <div class="form-group">
+            <label for="cargo">Cargo al que se postula</label>
+            <select>
+                <option>--Seleccione cargo a postular</option>
+                <option>Administrativo cajero</option>
+                <option>Asistente administrativo</option>
+                <option>Asistente de bodega</option>
+                <option>Asistente de venta</option>
+                <option>Bodeguero</option>
+                <option>Control de existencias</option>
+                <option>Guardia</option>
+                <option>Operador de grúa</option>
+                <option>Supervisor</option>
+                <option>Vendedor integral cajero</option>
+                <option>Jefe de tienda</option>
+                <option>Jefe de operaciones crédito</option>
+                <option>Atención al cliente</option>
+                <option>Cobranza telefónica</option>
+                <option>Recursos humanos</option>
+                <option>Visual Merchandising</option>
+                <option>Área comercial y negocios</option>
+                <option>Administración de sucursales</option>
+                <option>Informática</option>
+                <option>Contabilidad</option>
+                <option>Auditoria</option>
+                <option>Abastecimiento y compras</option>
+                <option>Comercio exterior</option>
+                <option>Mantención y servicios generales</option>
+                <option>Finanzas</option>
+                <option>Otros</option>
+            </select>
+        </div>
+        <!--Aqui debe adjuntarse el cv-->
+        <div class="form-group">
+            <label for="curriculum">Adjuntar CV (Formato PDF)</label>
+            <input id="curriculim" type="file" accept=".PDF">
+        </div>
+        <!--Aqui esta el boton de envio-->
+        <div class="form-group">
+            <form method="get" action="trabajo.component.html">
+                <a [routerLink]="['/agradecimientos']" routerLinkActive="router-link-active"><input type="submit" value="Enviar Postulación"></a>
+            </form>
+        </div>
+    </form>
+</div>
