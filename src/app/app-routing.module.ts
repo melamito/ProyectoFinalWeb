@@ -8,6 +8,7 @@ import { ContactoComponent} from '../app/components/contacto/contacto.component'
 import { CategoriaComponent } from '../app/components/categoria/categoria.component'
 import {TrabajoComponent} from '../app/components/trabajo/trabajo.component'
 import { AgradecimientoComponent } from './components/agradecimiento/agradecimiento.component';
+import { HorarioComponent } from './components/horario/horario.component';
  
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'contacto',component:ContactoComponent},
   {path:'categoria/:sexo/:cat',component:CategoriaComponent},
   {path:'trabajo',component:TrabajoComponent},
-  {path:'agradecimientos',component:AgradecimientoComponent}
+  {path:'agradecimientos',component:AgradecimientoComponent},
+  {path:'horario',component:HorarioComponent}
 ];
 
 @NgModule({

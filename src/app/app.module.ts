@@ -14,6 +14,7 @@ import { CategoriaComponent } from './components/categoria/categoria.component';
 import { TrabajoComponent } from './components/trabajo/trabajo.component';
 import { AgradecimientoComponent } from './components/agradecimiento/agradecimiento.component';
 import { HorarioComponent } from './components/horario/horario.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HorarioComponent } from './components/horario/horario.component';
     TrabajoComponent,
     AgradecimientoComponent,
     HorarioComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

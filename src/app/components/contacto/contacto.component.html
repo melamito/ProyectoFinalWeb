@@ -35,8 +35,9 @@
         <!--Aqui esta el boton de envio-->
         <div class="form-group">
             <form method="get" action="contacto.component.html">
-                <input type="submit" value="Enviar Datos">
+                <a [routerLink]="['/agradecimientos']" routerLinkActive="router-link-active"><input type="submit" value="Enviar Datos"></a>
             </form>
         </div>
     </form>
 </div>
+

@@ -1,43 +1,59 @@
+<!--Aqui comienza el footer-->
 <nav class="footer">
+    <!--Lista Principal para navegar por el footer-->
     <ul  class="lista">
+        <!--Primera columna del menu "sobre la empresa"-->
         <li>
             <ul class="listaSecundaria">
                 <li class="titulo">ACERCA DE CROWN</li>
-                <a [routerLink]="['/nosotros']" routerLinkActive="router-link-active" class="letras"><li>Quienes Somos</li></a>
-                <a [routerLink]="['/trabajo']" routerLinkActive="router-link-active" class="letras"><li>Trabaja con nosotros</li></a>
+                    <div class="ubicacion">
+                        <a [routerLink]="['/nosotros']" routerLinkActive="router-link-active" class="letras"><li>Quienes Somos</li></a>
+                        <a [routerLink]="['/trabajo']" routerLinkActive="router-link-active" class="letras"><li>Trabaja con nosotros</li></a>
+                    </div>
             </ul>
         </li>
+        <!--Segunda columna del menu "redes sociales de la empresa"-->
         <li>
             <ul class="listaSecundaria">
                 <li class="titulo">NUESTRAS REDES</li>
-                <a href="https://www.facebook.com/" class="letras"><li>Facebook</li></a>
-                <a href="https://twitter.com/" class="letras"><li>Twitter</li></a>
-                <a href="https://www.instagram.com/" class="letras"><li>Instagram</li></a>
+                <div class="ubicacion">
+                    <a href="https://www.facebook.com/" class="letras"><li>Facebook</li></a>
+                    <a href="https://twitter.com/" class="letras"><li>Twitter</li></a>
+                    <a href="https://www.instagram.com/" class="letras"><li>Instagram</li></a>
+                </div>
             </ul>
         </li>
+        <!--Tercera columna del menu "Ubicacion de los locales comerciales"-->
         <li>
             <ul class="listaSecundaria">
                 <li class="titulo">DONDE ESTAMOS</li>
-                <li class="letras">Mall Buin</li>
-                <li class="letras">Mall Macul</li>
-                <li class="letras">Mall Quillota</li>
-                <!--Estos mall no existen en la vida real, las ciudades puestas son en referencia a 
-                donde vivimos cada una K.Matamala(Buin), K.Rozas(Macul) y M.G.Castro(Quillota)-->
+                <div class="ubicacion">
+                    <a [routerLink]="['/horario']" routerLinkActive="router-link-active" class="letras"><li>Mall Buin</li></a>
+                    <a [routerLink]="['/horario']" routerLinkActive="router-link-active" class="letras"><li>Mall Macul</li></a>
+                    <a [routerLink]="['/horario']" routerLinkActive="router-link-active" class="letras"><li>Mall Quillota</li></a>
+                    <!--Estos mall no existen en la vida real, las ciudades puestas son en referencia a 
+                    donde vivimos cada una K.Matamala(Buin), K.Rozas(Macul) y M.G.Castro(Quillota)-->
+                </div>
             </ul>
         </li>
+        <!--Cuarta columna del menu "Atención de clientes"-->
         <li>
             <ul class="listaSecundaria">
-                <li class="titulo">SERVICIO AL CLIENTE</li>
-                <a [routerLink]="['/contacto']" routerLinkActive="router-link-active" class="letras"><li>Formulario de Contacto</li></a>
-                <li class="letras">Horario de nuestras tiendas</li>
+                <div class="ubicacion">
+                    <li class="titulo">SERVICIO AL CLIENTE</li>
+                    <a [routerLink]="['/contacto']" routerLinkActive="router-link-active" class="letras"><li>Formulario de Contacto</li></a>
+                    <a [routerLink]="['/horario']" routerLinkActive="router-link-active" class="letras"><li>Horario de nuestras tiendas</li></a>
+                </div>
             </ul>
         </li>
+        <!--Imagen de la empresa en el footer-->
         <li>
             <div id="logo">
                 <img id="imagen" src="./assets/icono.jpg">  
             </div>
         </li>
     </ul>
+    <!--Copyright-->
     <a>
         <div class="copyright">
             © Copyright María Gabriela Castro Almendra - Karina Noemí Matamala Palta - Karina Andrea Rozas Romo
