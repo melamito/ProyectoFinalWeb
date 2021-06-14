@@ -7,6 +7,7 @@ export interface Producto {
     sexo:number;
     categoria:number;
     puntuacion:number;
+    oferta: number;
 }
 
 /*
@@ -32,7 +33,8 @@ export const ListaProductos:Array<Producto>=
         imagen:"../../assets/productos/1.png",
         sexo: 1,
         categoria:12,
-        puntuacion:3
+        puntuacion:3,
+        oferta:0
     },
     {
         id:2,
@@ -42,7 +44,8 @@ export const ListaProductos:Array<Producto>=
         imagen:"../../assets/productos/2.png",
         sexo: 2,
         categoria:11,
-        puntuacion:2
+        puntuacion:2,
+        oferta:0
     },
     {
         id:3,
@@ -52,7 +55,8 @@ export const ListaProductos:Array<Producto>=
         imagen:"../../assets/productos/3.png",
         sexo: 1,
         categoria:13,
-        puntuacion:5
+        puntuacion:5,
+        oferta: 15
     },
     {
         id:4,
@@ -62,7 +66,8 @@ export const ListaProductos:Array<Producto>=
         imagen:"../../assets/productos/4.png",
         sexo: 3,
         categoria:11,
-        puntuacion:1
+        puntuacion:1,
+        oferta: 0
     },
     {
         id:5,
@@ -72,7 +77,52 @@ export const ListaProductos:Array<Producto>=
         imagen:"../../assets/productos/5.png",
         sexo: 3,
         categoria:14,
-        puntuacion:3
+        puntuacion:3,
+        oferta:0
+    },
+    {
+        id:6,
+        nombre:"Pantalon Hombre Slim Non Iron Stretch",
+        cantidad:1,
+        precio:84000,
+        imagen:"../../assets/productos/6.png",
+        sexo:2,
+        categoria:13,
+        puntuacion:4,
+        oferta:63000
+    },
+    {
+        id:7,
+        nombre:"Polera Mujer Sandwash",
+        cantidad:10,
+        precio:44000,
+        imagen:"../../assets/productos/7.png",
+        sexo:1,
+        categoria:11,
+        puntuacion:5,
+        oferta:0
+    },
+    {
+        id:8,
+        nombre:"Botín piel negro Bimba y lola",
+        cantidad:10,
+        precio:204000,
+        imagen:"../../assets/productos/8.png",
+        sexo:1,
+        categoria:14,
+        puntuacion:5,
+        oferta:163200
+    },
+    {
+        id:9,
+        nombre:"Sweater Hombre Merino Crew",
+        cantidad:10,
+        precio:78000,
+        imagen:"../../assets/productos/9.png",
+        sexo:2,
+        categoria:12,
+        puntuacion:5,
+        oferta:58500
     }
 
 ];

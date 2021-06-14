@@ -2,19 +2,19 @@
 <!----------- Carrusel ----------->
 <ngb-carousel *ngIf="images">
     <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
+      <a [routerLink]="['/categoria','2','11']" routerLinkActive="router-link-active" class="link"><div class="picsum-img-wrapper">
         <img id="carrusel" src="./assets/Carrusel1.jpeg">
-      </div>
+      </div></a>
     </ng-template>
     <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
+      <a [routerLink]="['/categoria','2','13']" routerLinkActive="router-link-active" class="link"><div class="picsum-img-wrapper">
         <img id="carrusel" src="./assets/Carrusel2.jpeg">
-      </div>
+      </div></a>
     </ng-template>
     <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
+      <a [routerLink]="['/categoria','1','12']" routerLinkActive="router-link-active" class="link"><div class="picsum-img-wrapper">
         <img id="carrusel" src="./assets/Carrusel3.jpeg">
-      </div>
+      </div></a>
     </ng-template>
   </ngb-carousel>
 
