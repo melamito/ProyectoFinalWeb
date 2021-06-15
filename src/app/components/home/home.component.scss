@@ -14,13 +14,48 @@ ngb-carousel{
 
 .cuadricula{
     width: 25%;
+    height: 400px;
     padding:2.5%;
     display: inline-block;
 }
 
-.cuadricula p{
+.precio{
+    width: 100%;
+    height: 55px;
+    display:inline-table
+}
+
+.precios{
+    width: 100%;
+    height: 55px;
+}
+
+.text{
     text-align: center;
     font-weight: bold;
+    font-size: 20px;
+}
+
+.texto{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nombre{
+    width: 100%;
+    height: 65px;
+    display:inline-table
+}
+
+.tachado{
+    text-align: center;
+    font-size: 15px;
+    text-decoration: line-through;
+    margin:0;
+    padding:0;
 }
 
 .stock{

@@ -26,7 +26,6 @@ export class CategoriaComponent implements OnInit {
       var i=0;
       for(var item in ListaProductos){
         if((ListaProductos[item].sexo==this.sexo && ListaProductos[item].categoria==this.cat) || (ListaProductos[item].sexo==this.sexo && this.cat==0)){
-            console.log(ListaProductos[item].nombre)
             this.productos[i]=ListaProductos[item];
             i++;
         }

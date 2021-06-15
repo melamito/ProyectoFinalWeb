@@ -21,6 +21,9 @@ export interface Producto {
         12 = Polerones
         13 = Pantalones
         14 = Zapatos
+
+    Imagenes:
+        855 * 855 px
 */
 
 export const ListaProductos:Array<Producto>=
@@ -56,7 +59,7 @@ export const ListaProductos:Array<Producto>=
         sexo: 1,
         categoria:13,
         puntuacion:5,
-        oferta: 15
+        oferta: 80000
     },
     {
         id:4,

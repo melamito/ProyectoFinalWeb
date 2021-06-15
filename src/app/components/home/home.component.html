@@ -3,17 +3,17 @@
 <ngb-carousel *ngIf="images">
     <ng-template ngbSlide>
       <a [routerLink]="['/categoria','2','11']" routerLinkActive="router-link-active" class="link"><div class="picsum-img-wrapper">
-        <img id="carrusel" src="./assets/Carrusel1.jpeg">
+        <img id="carrusel" src="./assets/Carrusel/1.jpeg">
       </div></a>
     </ng-template>
     <ng-template ngbSlide>
       <a [routerLink]="['/categoria','2','13']" routerLinkActive="router-link-active" class="link"><div class="picsum-img-wrapper">
-        <img id="carrusel" src="./assets/Carrusel2.jpeg">
+        <img id="carrusel" src="./assets/Carrusel/2.jpeg">
       </div></a>
     </ng-template>
     <ng-template ngbSlide>
       <a [routerLink]="['/categoria','1','12']" routerLinkActive="router-link-active" class="link"><div class="picsum-img-wrapper">
-        <img id="carrusel" src="./assets/Carrusel3.jpeg">
+        <img id="carrusel" src="./assets/Carrusel/3.jpeg">
       </div></a>
     </ng-template>
   </ngb-carousel>
@@ -23,8 +23,16 @@
 <ul id=productos>  
     <li *ngFor="let item of Lista" class="cuadricula">
         <img src="{{item.imagen}}" class=imagen>
-        <p>{{item.nombre}}</p>
-        <p>${{item.precio}}</p>
+        <div class="nombre">
+          <p class="texto">{{item.nombre}}</p>
+        </div>
+        <div class="precios" *ngIf="item.oferta>0">
+          <p class="tachado">${{item.precio}}</p>
+          <p class="text">${{item.oferta}}</p>
+        </div>
+        <div class="precio" *ngIf="item.oferta==0">
+          <p class="texto">${{item.precio}}</p>
+        </div>
         <div class="stock">
             <a [routerLink]="['/producto',item.id]" routerLinkActive="router-link-active"><button *ngIf="item.cantidad>0">Detalles</button></a> 
             <span *ngIf="item.cantidad==0" class="me">No disponible</span>
