@@ -15,6 +15,7 @@ import { TrabajoComponent } from './components/trabajo/trabajo.component';
 import { AgradecimientoComponent } from './components/agradecimiento/agradecimiento.component';
 import { HorarioComponent } from './components/horario/horario.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     TrabajoComponent,
     AgradecimientoComponent,
     HorarioComponent,
-    ContactoComponent
+    ContactoComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

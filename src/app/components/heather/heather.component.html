@@ -41,10 +41,10 @@
                 </li>
             </ul>
           </ng-template>
-        </li>
+        <!--</li>
         <li ngbNavItem>
             <a ngbNavLink class="estiloLetras">Sale</a>
-        </li>
+        </li>-->
         <li ngbNavItem class="centro">
           <a [routerLink]="['/']" routerLinkActive="router-link-active" ><a ngbNavLink class="marca">CROWN</a></a>
         </li>
@@ -52,9 +52,14 @@
         <li ngbNavItem>
           <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Iniciar sesión</a></a>
         </li>
+        <!--Este es el icono del carrito de compras-->
         <li ngbNavItem>
           <a ngbNavLink class="estiloLetras"><i class="fas fa-shopping-cart"></i></a>
         </li>
+        <!--Aqui va el registro-->
+        <li ngbNavItem>
+          <a [routerLink]="['/registro']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Registro</a></a>
+        </li>
       </ul>
-      <div [ngbNavOutlet]="nav"></div>
+      <div [ngbNavOutlet]="nav">a</div>
 </nav>

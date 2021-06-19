@@ -9,6 +9,7 @@ import { CategoriaComponent } from '../app/components/categoria/categoria.compon
 import {TrabajoComponent} from '../app/components/trabajo/trabajo.component'
 import { AgradecimientoComponent } from './components/agradecimiento/agradecimiento.component';
 import { HorarioComponent } from './components/horario/horario.component';
+import { RegistroComponent} from './components/registro/registro.component';
  
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'categoria/:sexo/:cat',component:CategoriaComponent},
   {path:'trabajo',component:TrabajoComponent},
   {path:'agradecimientos',component:AgradecimientoComponent},
-  {path:'horario',component:HorarioComponent}
+  {path:'horario',component:HorarioComponent},
+  {path:'registro',component:RegistroComponent}
 ];
 
 @NgModule({
