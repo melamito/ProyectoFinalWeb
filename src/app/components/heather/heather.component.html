@@ -61,5 +61,14 @@
           <a [routerLink]="['/registro']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Registro</a></a>
         </li>
       </ul>
-      <div [ngbNavOutlet]="nav">a</div>
 </nav>
+
+<nav class="navbar navbar-light bg-light" class="buscador">
+  <div class="container-fluid" class="cajaBuscador">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success" class="estiloBoton" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+

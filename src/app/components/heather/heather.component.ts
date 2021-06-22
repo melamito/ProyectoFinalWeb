@@ -11,5 +11,4 @@ export class HeatherComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
