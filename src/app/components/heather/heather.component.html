@@ -5,10 +5,12 @@
             <a ngbNavLink class="estiloLetras">Home</a>
           </a>
         </li> 
+        <!--Categorias tienda-->
         <li ngbNavItem>
           <a ngbNavLink class="estiloLetras">Categorias</a>
-          <ng-template ngbNavContent>
-            <ul ngbNav #nav="ngbNav" class="nav-tabs" class="categoria">
+            <ng-template ngbNavContent>
+              <!--Lista de subcategoria-->
+              <ul ngbNav #nav="ngbNav" class="nav-tabs" class="categoria">
                 <li ngbNavLink class="subcategoria">
                     <a class="tipo">Mujer</a>
                     <ul class="lista">
@@ -41,10 +43,12 @@
                 </li>
             </ul>
           </ng-template>
-        <!--</li>
+        </li>
+        <!--
         <li ngbNavItem>
             <a ngbNavLink class="estiloLetras">Sale</a>
-        </li>-->
+        </li>
+        -->
         <li ngbNavItem class="centro">
           <a [routerLink]="['/']" routerLinkActive="router-link-active" ><a ngbNavLink class="marca">CROWN</a></a>
         </li>
@@ -63,12 +67,21 @@
       </ul>
 </nav>
 
-<nav class="navbar navbar-light bg-light" class="buscador">
+<!--Buscador-->
+<!--
+<form class="buscador" [formGroup]="formulario" (submit)="buscarProducto()">
+  <input type='text' formControlName="texto" placeholder="Buscar" class="searchingBox">
+  <button class="buttonStyle">Buscar</button>
+</form>
+-->
+<!--Buscador bootstrap-->
+<!--<nav class="navbar navbar-light bg-light" class="buscador">
   <div class="container-fluid" class="cajaBuscador">
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
       <button class="btn btn-outline-success" class="estiloBoton" type="submit">Buscar</button>
     </form>
   </div>
-</nav>
+</nav>-->
+
 

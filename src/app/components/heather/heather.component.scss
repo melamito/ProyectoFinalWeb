@@ -55,18 +55,48 @@
 }
 
 .buscador{
-    width: 100%;
+    margin-top: 1%;
     text-align: center;
-
 }
-.cajaBuscador{
-    width:50%;
+
+.searchingBox{
+    border: 1px solid #969a9d;
+    margin-right: 1%;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.buttonStyle{
+    background-color: #F2A663;
+    color: #F2F2F2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    border: 1px solid #F2A663;
     border-radius: 10px;
 }
+
+
+
+
+
+
+/* BUSCADOR BOOTSTRAP 
+.buscador{
+    width: 50%;
+    text-align: center;
+}
+.rectanguloBuscador{
+    border-radius: 10px;
+    width: 50%;
+    border:1px solid gray;
+    margin-top: 3%;
+}
+
 .estiloBoton{
+    margin-top: 3%;
     background-color: #F2A663;
     color: #F2F2F2;
     border: 1px solid #F2A663;
     border-radius: 10px;
 }
+*/

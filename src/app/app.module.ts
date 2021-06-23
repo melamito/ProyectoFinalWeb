@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http'
+import {ReactiveFormsModule} from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeatherComponent } from './components/heather/heather.component';
@@ -16,6 +17,7 @@ import { AgradecimientoComponent } from './components/agradecimiento/agradecimie
 import { HorarioComponent } from './components/horario/horario.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 
 @NgModule({
@@ -32,12 +34,15 @@ import { RegistroComponent } from './components/registro/registro.component';
     AgradecimientoComponent,
     HorarioComponent,
     ContactoComponent,
-    RegistroComponent
+    RegistroComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
