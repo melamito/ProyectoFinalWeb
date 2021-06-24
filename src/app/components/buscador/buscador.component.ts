@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Producto,ListaProductos} from '../../interfaces/producto';
+import { OnInit, Component } from '@angular/core'
+import {Producto} from '../../interfaces/producto';
 import {BuscarService} from '../../services/buscar.service'
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BuscadorComponent implements OnInit {
 
-  Lista=ListaProductos;
   productos:Producto[]=[];
   constructor(private serviciobuscar:BuscarService) { }
 

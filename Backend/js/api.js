@@ -41,16 +41,20 @@ app.listen(config, function () {
 //todos los productos
 app.get('/productos', function (req, res) {
     conexionMysql.query("select * from productos", function (req1, res1) {
-        console.log(res1);
+        console.log("Todos los productos enviados de la BD");
         res.status(200).send(res1);
     });
 });
-//ub producto especifico
+//un producto especifico
 app.get('/productos/:id', function (req, res) {
     var id = req.params.id;
     console.log(id);
     conexionMysql.query("select * from productos where id=?", id, function (req1, res1) {
-        console.log(res1);
+        console.log("Producto por id encontrado y enviado");
         res.status(200).send(res1);
     });
 });
+/*
+    Debo recordar hacer tsc --watch para que se vaya generando mi archivo js
+    y ejecutar node js/api.js para ejecutar el coso este
+    */ 

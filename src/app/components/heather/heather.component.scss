@@ -1,6 +1,7 @@
 .header{
     background-color: black;
     height: 40px;
+    width: 100%;
 }
 
 .menu{
@@ -9,6 +10,17 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
 }
+
+.item{
+    width:10%;
+    align-items: center;
+    text-align: center;
+}
+
+.centro{
+    width: 50%;
+}
+
 .categoria{
     display: inline-flex;
     position: absolute;
@@ -35,9 +47,7 @@
     color:white;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-.centro{
-    width: 65%;
-}
+
 .marca{
     height: 86%;
     color:white;

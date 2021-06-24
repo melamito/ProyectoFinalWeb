@@ -14,4 +14,9 @@ export class BuscarService {
   Buscarproducto():Observable<any>{
     return this.servicio.get(`${this.servidor}/productos`)
   }
+
+  BuscarPorId(id:number):Observable<any>{
+    return this.servicio.get(`${this.servidor}/productos/${id}`)
+  }
+
 }

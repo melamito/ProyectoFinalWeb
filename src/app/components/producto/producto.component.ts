@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {Producto,ListaProductos} from '../../interfaces/producto';
+import {BuscarService} from '../../services/buscar.service'
+import {Producto,NULO} from '../../interfaces/producto';
 
 @Component({
   selector: 'app-producto',
@@ -9,9 +10,10 @@ import {Producto,ListaProductos} from '../../interfaces/producto';
 })
 export class ProductoComponent implements OnInit {
 
-  Productos=ListaProductos;
+  
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute, private serviciobuscar:BuscarService) { }
+  producto:Producto=NULO;
   ruta:any;
   id:number=0;
 
@@ -19,6 +21,12 @@ export class ProductoComponent implements OnInit {
   ngOnInit(): void {
     this.ruta=this.route.params.subscribe(parametro=>{
       this.id=parametro['id'];
+
+      this.serviciobuscar.BuscarPorId(this.id).subscribe(dato=>{
+        this.producto=dato[0];
+        console.log("Encontrado:",dato)
+        console.log("Encontrado 2:",dato[0])
+      });
     });
   }
 

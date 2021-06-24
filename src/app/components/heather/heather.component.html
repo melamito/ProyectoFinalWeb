@@ -1,12 +1,12 @@
 <nav class="header">
     <ul ngbNav #nav="ngbNav" class="nav-tabs" class="menu">
-        <li ngbNavItem>
+        <li ngbNavItem class="item">
           <a [routerLink]="['/']" routerLinkActive="router-link-active">
             <a ngbNavLink class="estiloLetras">Home</a>
           </a>
         </li> 
         <!--Categorias tienda-->
-        <li ngbNavItem>
+        <li ngbNavItem class="item">
           <a ngbNavLink class="estiloLetras">Categorias</a>
             <ng-template ngbNavContent>
               <!--Lista de subcategoria-->
@@ -53,15 +53,15 @@
           <a [routerLink]="['/']" routerLinkActive="router-link-active" ><a ngbNavLink class="marca">CROWN</a></a>
         </li>
         <!--Aqui debe ir la barra del buscador-->
-        <li ngbNavItem>
+        <li ngbNavItem class="item">
           <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Iniciar sesión</a></a>
         </li>
         <!--Este es el icono del carrito de compras-->
-        <li ngbNavItem>
-          <a ngbNavLink class="estiloLetras"><i class="fas fa-shopping-cart"></i></a>
+        <li ngbNavItem class="item">
+          <a ngbNavLink class="estiloLetras">Carrito <i class="fas fa-shopping-cart"></i></a>
         </li>
         <!--Aqui va el registro-->
-        <li ngbNavItem>
+        <li ngbNavItem class="item">
           <a [routerLink]="['/registro']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Registro</a></a>
         </li>
       </ul>

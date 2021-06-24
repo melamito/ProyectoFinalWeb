@@ -48,7 +48,7 @@ app.listen(config, () => {
 //todos los productos
 app.get('/productos',(req:any,res:any)=>{
     conexionMysql.query("select * from productos",(req1:any,res1:any)=>{
-        console.log(res1);
+        console.log("Todos los productos enviados de la BD");
         res.status(200).send(res1);
     })
 });
@@ -58,7 +58,7 @@ app.get('/productos/:id',(req:any,res:any)=>{
     let id= req.params.id;
     console.log(id);
     conexionMysql.query("select * from productos where id=?",id,(req1:any,res1:any)=>{
-        console.log(res1);
+        console.log("Producto por id encontrado y enviado");
         res.status(200).send(res1);
     })
 });
