@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-06-2021 a las 00:02:15
+-- Tiempo de generación: 24-06-2021 a las 04:29:53
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `crown_db`
+-- Base de datos: `crow_db`
 --
 CREATE DATABASE IF NOT EXISTS `crown_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `crown_db`;
@@ -408,7 +408,8 @@ CREATE TABLE `productos` (
   `sexo` int(11) NOT NULL,
   `categoria` int(11) NOT NULL,
   `puntuacion` int(11) NOT NULL,
-  `oferta` int(11) NOT NULL
+  `oferta` int(11) NOT NULL,
+  `Comentarios` varchar(500) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -419,16 +420,107 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `nombre`, `cantidad`, `precio`, `imagen`, `sexo`, `categoria`, `puntuacion`, `oferta`) VALUES
-(1, 'Sweater Cable Mock', 5, 108000, '../../assets/productos/1.png', 1, 12, 3, 0),
-(2, 'Camisa Oxford Logo', 3, 48000, '../../assets/productos/2.png', 2, 11, 2, 0),
-(3, 'Pantalon Ryan Glenplaid', 6, 88000, '../../assets/productos/3.png', 1, 13, 5, 80000),
-(4, 'Polera Lace Jr. Bebé Uva', 0, 19990, '../../assets/productos/4.png', 3, 11, 2, 0),
-(5, 'Bota Comfy Recién Nacida Beige', 6, 11990, '../../assets/productos/5.png', 3, 14, 1, 0),
-(6, 'Pantalon Hombre Slim Non Iron Stretch', 2, 84000, '../../assets/productos/6.png', 2, 13, 3, 63000),
-(7, 'Polera Mujer Sandwash', 14, 44000, '../../assets/productos/7.png', 1, 11, 3, 0),
-(8, 'Botín piel negro Bimba y lola', 5, 20400, '../../assets/productos/8.png', 1, 14, 5, 16320),
-(9, 'Sweater Hombre Merino Crew', 3, 78000, '../../assets/productos/9.png', 2, 12, 4, 58500);
+INSERT INTO `productos` (`id`, `nombre`, `cantidad`, `precio`, `imagen`, `sexo`, `categoria`, `puntuacion`, `oferta`, `Comentarios`) VALUES
+(1, 'Sweater Cable Mock', 5, 108000, '../../assets/productos/1.png', 1, 12, 3, 0, ''),
+(2, 'Camisa Oxford Logo', 3, 48000, '../../assets/productos/2.png', 2, 11, 2, 0, ''),
+(3, 'Pantalon Ryan Glenplaid', 6, 88000, '../../assets/productos/3.png', 1, 13, 5, 80000, ''),
+(4, 'Polera Lace Jr. Bebé Uva', 0, 19990, '../../assets/productos/4.png', 3, 11, 2, 0, ''),
+(5, 'Bota Comfy Recién Nacida Beige', 6, 11990, '../../assets/productos/5.png', 3, 14, 1, 0, ''),
+(6, 'Pantalon Hombre Slim Non Iron Stretch', 2, 84000, '../../assets/productos/6.png', 2, 13, 3, 63000, ''),
+(7, 'Polera Mujer Sandwash', 14, 44000, '../../assets/productos/7.png', 1, 11, 3, 0, ''),
+(8, 'Botín piel negro Bimba y lola', 5, 20400, '../../assets/productos/8.png', 1, 14, 5, 16320, ''),
+(9, 'Sweater Hombre Merino Crew', 3, 78000, '../../assets/productos/9.png', 2, 12, 4, 58500, ''),
+(10, 'Polera Gris Hombre', 14, 15000, '../../assets/productos/10.png', 2, 11, 1, 0, ''),
+(11, 'Pantalón Jeans Hombre', 4, 32000, '../../assets/productos/11.png', 2, 13, 3, 28000, ''),
+(12, 'Zapato Formal Hombre', 10, 45000, '../../assets/productos/12.png', 2, 14, 5, 0, ''),
+(13, 'Poleron Mostaza Hombre', 5, 48990, '../../assets/productos/13.png', 2, 12, 1, 0, ''),
+(14, 'Pantalón Casual Hombre', 2, 30000, '../../assets/productos/14.png', 2, 13, 4, 0, ''),
+(15, 'Zapato Semiformal Hombre', 6, 64000, '../../assets/productos/15.png', 2, 14, 3, 59990, ''),
+(16, 'Zapato Negro Mujer Tacón Bajo', 1, 44590, '../../assets/productos/16.png', 1, 14, 4, 0, ''),
+(17, 'Pantalón Ajustado Negro Mujer', 4, 35890, '../../assets/productos/17.png', 1, 13, 2, 0, ''),
+(18, 'Polera Animal Mujer', 1, 25990, '../../assets/productos/18.png', 1, 11, 2, 21000, ''),
+(19, 'Pantalón Corto Amarillo Mujer', 10, 26990, '../../assets/productos/19.png', 1, 13, 4, 0, ''),
+(20, 'Zapato Semiformal Mujer', 0, 68990, '../../assets/productos/20.png', 1, 14, 4, 0, ''),
+(21, 'Polerón Colorido Hombre', 20, 36990, '../../assets/productos/21.png', 2, 12, 1, 0, ''),
+(22, 'Polerón The Simpson Hombre', 4, 28990, '../../assets/productos/22.png', 2, 12, 5, 0, ''),
+(23, 'Polera Básica Hombre', 10, 15990, '../../assets/productos/23.png', 2, 11, 1, 0, ''),
+(24, 'Pantalón Negro Hombre', 0, 34990, '../../assets/productos/24.png', 2, 13, 4, 0, ''),
+(25, 'Zapato Casual Hombre', 15, 49990, '../../assets/productos/25.png', 2, 14, 5, 0, ''),
+(26, 'Polerón Blanco/Rosado Mujer', 9, 29990, '../../assets/productos/26.png', 1, 12, 2, 0, ''),
+(27, 'Polerón Coqueto Playboy Mujer', 19, 31990, '../../assets/productos/27.png', 1, 13, 4, 0, ''),
+(28, 'Polera Básica Hombre Azul', 0, 26990, '../../assets/productos/28.png', 2, 11, 2, 0, ''),
+(29, 'Zapato Cómodo Mujer', 8, 44990, '../../assets/productos/29.png', 1, 14, 5, 0, ''),
+(30, 'Polerón Casual Mujer Rosado', 6, 38990, '../../assets/productos/30.png', 1, 12, 4, 29990, ''),
+(31, 'Pantalón Rojo Mujer', 16, 39990, '../../assets/productos/31.png', 1, 13, 3, 29990, ''),
+(32, 'Zapato Tipo Botines Mujer', 1, 88990, '../../assets/productos/32.png', 1, 14, 5, 0, ''),
+(33, 'Zapato Casual Mujer', 10, 31990, '../../assets/productos/33.png', 1, 14, 2, 0, ''),
+(34, 'Zapatos Cómodos Hombre', 4, 58990, '../../assets/productos/34.png', 2, 14, 5, 0, ''),
+(35, 'Polera Cuadros Niñe', 12, 28990, '../../assets/productos/35.png', 3, 11, 4, 0, ''),
+(36, 'Polera Casual Gris Hombre', 3, 24990, '../../assets/productos/36.png', 2, 11, 1, 0, ''),
+(37, 'Pantalón Cómodo Hombre', 0, 48990, '../../assets/productos/37.png', 2, 13, 5, 0, ''),
+(38, 'Polerón Casual Mujer Negro', 16, 23990, '../../assets/productos/38.png', 1, 12, 4, 0, ''),
+(39, 'Zapato Formal Hombre', 2, 92990, '../../assets/productos/39.png', 2, 14, 5, 0, ''),
+(40, 'Polerón Deportivo Hombre', 14, 40000, '../../assets/productos/40.png', 2, 12, 2, 34990, ''),
+(41, 'Pantalón Deportivo Hombre', 2, 38990, '../../assets/productos/41.png', 2, 13, 3, 0, ''),
+(42, 'Polera Rayas Niñe', 19, 30990, '../../assets/productos/42.png', 3, 11, 5, 0, ''),
+(43, 'Polera Manga Larga Mujer', 7, 29990, '../../assets/productos/43.png', 1, 11, 1, 0, ''),
+(44, 'Polera Corazón Mujer', 11, 23990, '../../assets/productos/44.png', 1, 11, 3, 0, ''),
+(45, 'Polera Iron Man Niñe', 2, 29990, '../../assets/productos/45.png', 3, 11, 4, 0, ''),
+(46, 'Polera León Niñe', 23, 24990, '../../assets/productos/46.png', 3, 11, 3, 0, ''),
+(47, 'Polera Smile Niñe', 4, 18990, '../../assets/productos/47.png', 3, 11, 3, 0, ''),
+(48, 'Zapatos Tacón Alto Azul Mujer', 6, 58990, '../../assets/productos/48.png', 1, 14, 5, 0, ''),
+(49, 'Zapatos Semiformal Mujer', 10, 62990, '../../assets/productos/49.png', 1, 14, 4, 0, ''),
+(50, 'Polerón Largo Mujer', 0, 58990, '../../assets/productos/50.png', 1, 12, 3, 0, ''),
+(51, 'Polera Corta Niñe', 16, 30990, '../../assets/productos/51.png', 3, 11, 4, 0, ''),
+(52, 'Polera Rosa Niñe', 10, 28990, '../../assets/productos/52.png', 3, 11, 3, 0, ''),
+(53, 'Zapato Casual Rojo Hombre', 13, 50990, '../../assets/productos/53.png', 2, 14, 5, 0, ''),
+(54, 'Pantalón Rojo Hombre', 3, 38000, '../../assets/productos/54.png', 2, 13, 4, 0, ''),
+(55, 'Pantalón Semiformal Hombre', 6, 32990, '../../assets/productos/55.png', 2, 13, 4, 0, ''),
+(56, 'Zapato Lolita Mujer', 14, 78990, '../../assets/productos/56.png', 1, 14, 5, 0, ''),
+(57, 'Zapato Cómodo Hombre', 2, 75990, '../../assets/productos/57.png', 2, 14, 4, 0, ''),
+(58, 'Polera Unicornio Niñe', 4, 32990, '../../assets/productos/58.png', 3, 11, 3, 0, ''),
+(59, 'Zapato Botín Mujer', 0, 40990, '../../assets/productos/59.png', 1, 14, 5, 0, ''),
+(60, 'Zapato Formal Mujer', 10, 78990, '../../assets/productos/60.png', 1, 14, 5, 0, ''),
+(61, 'Pantalón Retro Hombre', 3, 41990, '../../assets/productos/61.png', 2, 13, 3, 0, ''),
+(62, 'Zapato Formal Cuero Hombre', 2, 119990, '../../assets/productos/62.png', 2, 14, 5, 0, ''),
+(63, 'Zapato Fiesta Mujer Rojo', 4, 60990, '../../assets/productos/63.png', 1, 14, 4, 0, ''),
+(64, 'Zapato Formal Hombre', 0, 80990, '../../assets/productos/64.png', 2, 14, 5, 68990, ''),
+(65, 'Polera Niñe Rosa', 10, 20990, '../../assets/productos/65.png', 3, 11, 3, 0, ''),
+(66, 'Pantalón Cómodo Niñe', 4, 35990, '../../assets/productos/66.png', 3, 13, 4, 0, ''),
+(67, 'Polera Rayas Niñe', 1, 10990, '../../assets/productos/67.png', 3, 11, 4, 0, ''),
+(68, 'Polera Colorida Niñe', 20, 20990, '../../assets/productos/68.png', 3, 11, 5, 0, ''),
+(69, 'Polerón Rojo Mujer', 2, 41990, '../../assets/productos/69.png', 1, 12, 5, 0, ''),
+(70, 'Zapato Botín Mujer', 0, 40990, '../../assets/productos/70.png', 1, 14, 5, 0, ''),
+(71, 'Zapato Botín Hombre', 2, 95000, '../../assets/productos/71.png', 2, 14, 5, 0, ''),
+(72, 'Polerón Blanco/Rosado Niñe', 2, 29990, '../../assets/productos/72.png', 3, 12, 5, 0, ''),
+(73, 'Polerón Niñe', 0, 31990, '../../assets/productos/73.png', 3, 12, 3, 0, ''),
+(74, 'Zapato Rosa Niñe', 4, 41990, '../../assets/productos/74.png', 3, 14, 5, 0, ''),
+(75, 'Pantalón Deportivo Hombre', 3, 35000, '../../assets/productos/75.png', 2, 14, 3, 0, ''),
+(76, 'Polera Cómoda Mujer', 9, 20990, '../../assets/productos/76.png', 1, 11, 4, 0, ''),
+(77, 'Polerón Love Hombre', 12, 38900, '../../assets/productos/77.png', 1, 12, 4, 0, ''),
+(78, 'Zapato Escolar Niñe', 12, 45990, '../../assets/productos/78.png', 3, 14, 5, 0, ''),
+(79, 'Polerón Dinosaurio Niñe', 8, 25000, '../../assets/productos/79.png', 3, 12, 4, 0, ''),
+(80, 'Polerón Café Mujer', 3, 55990, '../../assets/productos/80.png', 1, 12, 5, 0, ''),
+(81, 'Zapato Botín Niñe', 12, 45000, '../../assets/productos/81.png', 3, 14, 5, 0, ''),
+(82, 'Pantalón Corto Deportivo Hombre', 10, 50990, '../../assets/productos/82.png', 2, 13, 5, 0, ''),
+(83, 'Pantalón Corto Mujer', 3, 35000, '../../assets/productos/83.png', 1, 12, 4, 0, ''),
+(84, 'Polerón Rosa Mujer', 1, 64990, '../../assets/productos/84.png', 1, 12, 5, 0, ''),
+(85, 'Zapatos Princesas Niñe', 20, 48900, '../../assets/productos/85.png', 3, 14, 5, 0, ''),
+(86, 'Polerón Básico Mujer', 1, 25900, '../../assets/productos/86.png', 1, 12, 4, 0, ''),
+(87, 'Polerón Hombre Azul', 19, 45000, '../../assets/productos/87.png', 2, 12, 3, 0, ''),
+(88, 'Polera Mujer Rosa', 3, 28900, '../../assets/productos/88.png', 1, 11, 4, 0, ''),
+(89, 'Zapato Plateado Niñe', 2, 55900, '../../assets/productos/89.png', 3, 14, 5, 0, ''),
+(90, 'Polerón Sin Mangas Mujer', 9, 35000, '../../assets/productos/90.png', 1, 12, 4, 0, ''),
+(91, 'Zapato Rojo niñe', 1, 62000, '../../assets/productos/91.png', 3, 14, 5, 0, ''),
+(92, 'Polerón TikTok Niñe', 0, 25000, '../../assets/productos/92.png', 3, 12, 4, 0, ''),
+(93, 'Pantalón Corto Verde Hombre', 8, 45000, '../../assets/productos/93.png', 2, 13, 4, 0, ''),
+(94, 'Pantalón Corto Casual Mujer', 3, 51000, '../../assets/productos/94.png', 1, 13, 5, 45000, ''),
+(95, 'Polerón Hombre Azul', 1, 69000, '../../assets/productos/95.png', 2, 12, 4, 0, ''),
+(96, 'Polerón Deportivo Mujer', 3, 55900, '../../assets/productos/96.png', 1, 12, 5, 0, ''),
+(97, 'Zapato Cómodo Niñe', 3, 40900, '../../assets/productos/97.png', 3, 14, 5, 0, ''),
+(98, 'Zapato Abierto Mujer', 1, 55000, '../../assets/productos/98.png', 3, 14, 5, 0, ''),
+(99, 'Pantalón Corto Hombre', 12, 44900, '../../assets/productos/99.png', 2, 13, 5, 0, ''),
+(100, 'Pantalón Corto Celeste Mujer', 0, 55900, '../../assets/productos/100.png', 1, 13, 5, 0, '');
 
 -- --------------------------------------------------------
 
@@ -562,15 +654,23 @@ CREATE TABLE `usuarios` (
   `apellidos` varchar(50) NOT NULL,
   `rut` varchar(50) NOT NULL,
   `direccion` varchar(50) NOT NULL,
-  `region` varchar(50) NOT NULL,
-  `comuna` varchar(50) NOT NULL,
+  `region` int(11) NOT NULL,
+  `provincia` int(11) NOT NULL,
+  `comuna` int(10) NOT NULL,
   `correo` varchar(50) NOT NULL,
-  `contraseña` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `contraseña` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- RELACIONES PARA LA TABLA `usuarios`:
 --
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `rut`, `direccion`, `region`, `provincia`, `comuna`, `correo`, `contraseña`) VALUES
+(1, 'Admin', 'Admin', '12345678-9', 'calle falsa 123', 7, 23, 101, 'admin@gmail.com', 'C????# ??????');
 
 --
 -- Índices para tablas volcadas
@@ -620,7 +720,7 @@ ALTER TABLE `comunas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT de la tabla `provincias`
@@ -638,7 +738,7 @@ ALTER TABLE `regiones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
