@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
+import { Usuario } from '../interfaces/usuario'
 import {Observable} from 'rxjs'
-
+const httpOptions={
+  headers : new HttpHeaders({'Content-Type': 'application/json'})
+};
 @Injectable({
   providedIn: 'root'
 })
@@ -19,4 +22,19 @@ export class BuscarService {
     return this.servicio.get(`${this.servidor}/productos/${id}`)
   }
 
+  Regiones():Observable<any>{
+    return this.servicio.get(`${this.servidor}/region`)
+  }
+
+  Provincias(id:number):Observable<any>{
+    return this.servicio.get(`${this.servidor}/provincia/${id}`)
+  }
+
+  Comunas(id:number):Observable<any>{
+    return this.servicio.get(`${this.servidor}/comuna/${id}`)
+  }
+
+  crearCliente(datos:Usuario):Observable<any>{
+    return this.servicio.post(`${this.servidor}/crearusuario`,JSON.stringify(datos),httpOptions)
+  }
 }

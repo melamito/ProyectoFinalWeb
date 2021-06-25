@@ -17,8 +17,14 @@
     text-align: center;
 }
 
+.carrito{
+    width:5%;
+    align-items: center;
+    text-align: center;
+}
+
 .centro{
-    width: 50%;
+    width: 55%;
 }
 
 .categoria{
@@ -85,9 +91,15 @@
     border-radius: 10px;
 }
 
+ng-template{
+    display:hidden;
+}
 
-
-
+.categoria:hover{
+   ng-tempale{
+       display:inline-flex
+   }
+}
 
 
 /* BUSCADOR BOOTSTRAP 

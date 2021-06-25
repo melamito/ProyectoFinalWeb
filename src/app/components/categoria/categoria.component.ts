@@ -28,6 +28,7 @@ export class CategoriaComponent implements OnInit {
 
       this.serviciobuscar.Buscarproducto().subscribe(datos=>{
         var i=0;
+        this.productos=[]
         for (var index in datos){
           if((datos[index].sexo==this.sexo && datos[index].categoria==this.cat) || (datos[index].sexo==this.sexo && this.cat==0)){
             this.productos.push(datos[index]);

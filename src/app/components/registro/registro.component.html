@@ -1,71 +1,75 @@
-<div class="contenedor">
+<div class="contenedor">   
     <!--Este es el formulario de contacto-->
-    <form class="formulario">
+    <form class="formulario" id="formulario" [formGroup]="formulario" (ngSubmit)="save($event)">
         <!--Este es el titulo-->
-        <div class="form-group"><h1 class="titulo">Formulario de registro</h1></div><br>
+        <div class="form-group">
+            <h1 class="titulo">Formulario de registro</h1>
+        </div>
+        <br>
         <!--Nombres del cliente-->
         <div class="form-group">
             <label for="nombres">Nombres</label>
-            <input id="nombres" type="text" maxlength="50" requiered="true">
+            <input type="text" id="nombres" formControlName="nombres" placeholder="Juanito">
         </div>
         <!--Apellidos del cliente-->
         <div class="form-group">
             <label for="apellidos">Apellidos</label><br>
-            <input id="apellidos" type="text" maxlength="30" required="true">
-        </div>
-        <!--RUT del cliente-->
-        <div class="form-group">
-            <label for="rut">RUT (Formato: Sin puntos y con guión)</label><br>
-            <input id="rut" type="tel" placeholder="20468825-7" maxlength="11" required="true">
-        </div>
-        <!--Aqui va la dirección del cliente-->
-        <div class="form-group">
-            <label for="direccion">Dirección de residencia</label><br>
-            <input id="direccion" type="text" placeholder="nombre de calle , 123" maxlength="100" requiered="true">
-        </div>
-        <div class="form-group">
-            <label for="region"></label>
-            <select>
-                <option>--Selecciona una regíon</option>
-                <option>I Región de Tarapacá</option>
-                <option>II Región de Antofagasta</option>
-                <option>III Región de Atacama</option>
-                <option>IV Región de Coquimbo</option>
-                <option>V Región de Valparaíso</option>
-                <option>VI Región del Libertador Bernardo O'higgins</option>
-                <option>VII Región del Maule</option>
-                <option>VIII Región del Biobío</option>
-                <option>IX Región de la Araucanía</option>
-                <option>X Región de Los Lagos</option>
-                <option>XI Región Aysén del General Carlos Ibañez del Campo</option>
-                <option>XII Región de Magallanes y Antártica Chilena</option>
-                <option>Región Metropolitana de Santiago</option>
-                <option>XIV Región de Los Ríos</option>
-                <option>XV Región de Arica y Parinacota</option>
-                <option>XVI Región de Ñuble</option>
-            </select>
+            <input type="text" id="apellidos" formControlName="apellidos" placeholder="De los Palotes">
         </div>
         <!--Aqui va el correo del usuario-->
         <div class="form-group">
             <label for="correo">Correo electronico</label>
-            <input id="correo" type="text" placeholder="tucorreo@gmail.com" maxlength="50" requiered="true">
+            <input type="email" formControlName="correo" placeholder="example@mail.com">
+        </div>
+        <!--RUT del cliente-->
+        <div class="form-group">
+            <label for="rut">RUT (Formato: Sin puntos y con guión)</label><br>
+            <input type="text" id="rut" formControlName="rut" placeholder="12345678-9">
+        </div>
+        <!--Aqui va la dirección del cliente-->
+        <div class="form-group">
+            <label for="region">Region</label>
+            <select formControlName="region">
+                <option selected>-- Seleccione Region --</option>
+                <option *ngFor="let region of listaRegiones" [value]="region.id">
+                    {{region.region}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="provincia">Provincia</label>
+            <select formControlName="provincia">
+                <option selected>-- Seleccione provincia --</option>
+                <option *ngFor="let provincia of listaProvincias" [value]="provincia.id">
+                   {{provincia.provincia}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comuna">Comuna</label>
+            <select formControlName="comuna">
+                <option selected>-- Seleccione Comuna --</option>
+                <option *ngFor="let comuna of listaComunas" [value]="comuna.id">
+                    {{comuna.comuna}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Calle y numero de residencia</label><br>
+            <input type="text" id="direccion" formControlName="direccion" placeholder="Calle falsa #123">
         </div>
         <!--Aqui va la contraseña-->
         <div class="form-group">
             <label for="contraseña">Contraseña</label>
-            <input id="contraseña" type="text" placeholder="contraseña">
+            <input type="text" id="contraseña" formControlName="contraseña">
         </div>
-        <!--Aqui va la confirmación de la contraseña-->
-        <div class="form-group">
-            <label for="confirmarContraseña">Confirmar Contraseña</label>
-            <input id="confirmarContraseña" type="text" placeholder="contraseña">
-        </div>
-        <!--Aqui esta el boton de envio-->
-        <div class="form-group">
-            <form method="get" action="contacto.component.html">
-                <a [routerLink]="['/agradecimientos']" routerLinkActive="router-link-active"><input type="submit" value="Enviar Datos"></a>
-            </form>
+        <div class="form-group boton">
+            <!--<a [routerLink]="['/agradecimientos']" routerLinkActive="router-link-active">-->
+                <button type="submit" [disabled]="formulario.invalid"> Enviar</button>
+            <!--</a>-->
         </div>
     </form>
-</div>
+</div> 
+
+
 

@@ -48,10 +48,45 @@ app.get('/productos', function (req, res) {
 //un producto especifico
 app.get('/productos/:id', function (req, res) {
     var id = req.params.id;
-    console.log(id);
+    console.log("id del producto buscado: ", id);
     conexionMysql.query("select * from productos where id=?", id, function (req1, res1) {
-        console.log("Producto por id encontrado y enviado");
+        console.log("Producto con id ", id, " encontrado y enviado");
         res.status(200).send(res1);
+    });
+});
+app.get('/region', function (req, res) {
+    conexionMysql.query("select * from regiones", function (req1, res1) {
+        console.log("regiones enviadas");
+        res.status(200).send(res1);
+    });
+});
+app.get('/provincia/:id', function (req, res) {
+    var id = req.params.id;
+    conexionMysql.query("select * from provincias where region_id=?", id, function (req1, res1) {
+        console.log("provincias enviadas");
+        res.status(200).send(res1);
+    });
+});
+app.get('/comuna/:id', function (req, res) {
+    var id = req.params.id;
+    conexionMysql.query("select * from comunas where provincia_id=?", id, function (req1, res1) {
+        console.log("comunas enviadas");
+        res.status(200).send(res1);
+    });
+});
+//app.use(bodyparser.json())
+app.post('/crearusuario', bodyparser.json(), function (req, res) {
+    var nombres = req.body.nombres;
+    var apellidos = req.body.apellidos;
+    var rut = req.body.rut;
+    var direccion = req.body.direccion;
+    var region = req.body.region;
+    var provincia = req.body.provincia;
+    var comuna = req.body.comuna;
+    var correo = req.body.correo;
+    var contraseña = req.body.contraseña;
+    conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña)VALUES('" + nombres + "','" + apellidos + "','" + rut + "','" + direccion + "','" + region + "','" + provincia + "','" + comuna + "','" + correo + "','" + contraseña + "')", function (req1, res1) {
+        res.status(201).send(JSON.stringify("Usuario " + nombres + " creado con el id: " + res1.insertId));
     });
 });
 /*

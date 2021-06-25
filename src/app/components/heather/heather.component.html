@@ -1,71 +1,89 @@
+<!--Sin nada-->
 <nav class="header">
-    <ul ngbNav #nav="ngbNav" class="nav-tabs" class="menu">
-        <li ngbNavItem class="item">
-          <a [routerLink]="['/']" routerLinkActive="router-link-active">
-            <a ngbNavLink class="estiloLetras">Home</a>
-          </a>
-        </li> 
-        <!--Categorias tienda-->
-        <li ngbNavItem class="item">
-          <a ngbNavLink class="estiloLetras">Categorias</a>
-            <ng-template ngbNavContent>
-              <!--Lista de subcategoria-->
-              <ul ngbNav #nav="ngbNav" class="nav-tabs" class="categoria">
-                <li ngbNavLink class="subcategoria">
-                    <a class="tipo">Mujer</a>
-                    <ul class="lista">
-                      <li><a [routerLink]="['/categoria','1','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
-                      <li><a [routerLink]="['/categoria','1','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
-                      <li><a [routerLink]="['/categoria','1','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
-                      <li><a [routerLink]="['/categoria','1','14']" routerLinkActive="router-link-active" class="link">Zapatos</a></li>
-                      <li><a [routerLink]="['/categoria','1','0']" routerLinkActive="router-link-active" class="link">Ver todo Mujer</a></li>
-                    </ul>
-                </li>
-                <li ngbNavLink class="subcategoria">
-                    <a class="tipo">Hombre</a>
-                    <ul class="lista">
-                      <li><a [routerLink]="['/categoria','2','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
-                      <li><a [routerLink]="['/categoria','2','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
-                      <li><a [routerLink]="['/categoria','2','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
-                      <li><a [routerLink]="['/categoria','2','14']" routerLinkActive="router-link-active" class="link">Zapatos</a></li>
-                      <li><a [routerLink]="['/categoria','2','0']" routerLinkActive="router-link-active" class="link">Ver todo Hombre</a></li>
-                    </ul>
-                </li>
-                <li ngbNavLink class="subcategoria">
-                    <a class="tipo">Niñes</a>
-                    <ul class="lista">
-                      <li><a [routerLink]="['/categoria','3','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
-                      <li><a [routerLink]="['/categoria','3','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
-                      <li><a [routerLink]="['/categoria','3','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
-                      <li><a [routerLink]="['/categoria','3','14']" routerLinkActive="router-link-active" class="link">Zapatos</a></li>
-                      <li><a [routerLink]="['/categoria','3','0']" routerLinkActive="router-link-active" class="link">Ver todo Niñes</a></li>
-                    </ul>
-                </li>
+  <ul ngbNav #nav="ngbNav" class="nav-tabs" class="menu">
+    <!--Home-->
+    <li ngbNavItem class="item">
+      <a ngbNavLink [routerLink]="['/']" routerLinkActive="router-link-active" class="estiloLetras">
+        Home
+      </a>
+    </li>
+    <!--Categorias de ropa-->
+    <li ngbNavItem class="item">
+      <a ngbNavLink class="estiloLetras">Categorias</a>
+      <ng-template ngbNavContent>
+        <!--Lista de Categorias-->
+        <ul ngbNav class="categoria">
+          <!--SUBCATEGORIA MUJER-->
+          <li class="subcategoria">
+            <a ngbNavLink class="tipo">Mujer</a>
+            <!--Lista categoria MUJER-->
+            <ul class="lista">
+              <li><a [routerLink]="['/categoria','1','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
+              <li><a [routerLink]="['/categoria','1','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
+              <li><a [routerLink]="['/categoria','1','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
+              <li><a [routerLink]="['/categoria','1','14']" routerLinkActive="router-link-active" class="link">Zapatos</a></li>
+              <li><a [routerLink]="['/categoria','1','0']" routerLinkActive="router-link-active" class="link">Ver todo Mujer</a></li>
             </ul>
-          </ng-template>
-        </li>
-        <!--
-        <li ngbNavItem>
-            <a ngbNavLink class="estiloLetras">Sale</a>
-        </li>
-        -->
-        <li ngbNavItem class="centro">
-          <a [routerLink]="['/']" routerLinkActive="router-link-active" ><a ngbNavLink class="marca">CROWN</a></a>
-        </li>
-        <!--Aqui debe ir la barra del buscador-->
-        <li ngbNavItem class="item">
-          <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Iniciar sesión</a></a>
-        </li>
-        <!--Este es el icono del carrito de compras-->
-        <li ngbNavItem class="item">
-          <a ngbNavLink class="estiloLetras">Carrito <i class="fas fa-shopping-cart"></i></a>
-        </li>
-        <!--Aqui va el registro-->
-        <li ngbNavItem class="item">
-          <a [routerLink]="['/registro']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Registro</a></a>
-        </li>
-      </ul>
+          </li>
+          <!--SUBCATEGORIA HOMBRE-->
+          <li class="subcategoria">
+            <a ngbNavLink class="tipo">Hombre</a>
+            <!--Lista categoria HOMBRE-->
+            <ul class="lista">
+              <li><a [routerLink]="['/categoria','2','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
+              <li><a [routerLink]="['/categoria','2','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
+              <li><a [routerLink]="['/categoria','2','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
+              <li><a [routerLink]="['/categoria','2','14']" routerLinkActive="router-link-active" class="link">Zapatos</a></li>
+              <li><a [routerLink]="['/categoria','2','0']" routerLinkActive="router-link-active" class="link">Ver todo Hombre</a></li>
+            </ul>
+          </li>
+          <!--SUBCATEGORIA NIÑES-->
+          <li class="subcategoria">
+            <a ngbNavLink class="tipo">Niñes</a>
+            <!--Lista categoria NIÑES-->
+            <ul class="lista">
+              <li><a [routerLink]="['/categoria','3','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
+              <li><a [routerLink]="['/categoria','3','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
+              <li><a [routerLink]="['/categoria','3','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
+              <li><a [routerLink]="['/categoria','3','14']" routerLinkActive="router-link-active" class="link">Zapatos</a></li>
+              <li><a [routerLink]="['/categoria','3','0']" routerLinkActive="router-link-active" class="link">Ver todo Niñes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </ng-template>
+    </li>
+    <!--MARCA AL CENTRO-->
+    <li ngbNavItem class="centro">
+      <a [routerLink]="['/']" routerLinkActive="router-link-active" ><a ngbNavLink class="marca">CROWN</a></a>
+    </li>
+    <!--INICIAR SESION-->
+    <li ngbNavItem class="item">
+      <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Iniciar sesión</a></a>
+    </li>
+    <!--CARRITO DE COMPRAS-->
+    <li ngbNavItem class="carrito">
+      <a ngbNavLink class="estiloLetras"><i class="fas fa-shopping-cart"></i></a>
+    </li>
+    <!--REGISTRO-->
+    <li ngbNavItem class="item">
+      <a [routerLink]="['/registro']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Registro</a></a>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
 </nav>
+
+
+<!--Buscador-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="searchbar">
+      <input class="search_input" type="text" name="" placeholder="Search...">
+      <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+    </div>
+  </div>
+</div>
 
 <!--Buscador-->
 <!--
