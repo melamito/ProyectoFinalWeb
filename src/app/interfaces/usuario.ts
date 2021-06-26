@@ -8,5 +8,6 @@ export interface Usuario {
     provincia:number,
     comuna:number,
     correo:string,
-    contraseña:string
+    contraseña:string,
+    admi:number
 }

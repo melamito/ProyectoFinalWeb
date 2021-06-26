@@ -18,6 +18,8 @@ import { HorarioComponent } from './components/horario/horario.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { BuscarPipe } from './pipes/buscar.pipe';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
@@ -35,14 +37,16 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     HorarioComponent,
     ContactoComponent,
     RegistroComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    BuscarPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

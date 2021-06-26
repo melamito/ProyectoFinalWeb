@@ -16,9 +16,9 @@ var config = {
 //Configuracion de la conexion
 var conexionMysql = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'usuariocrown',
     port: 3306,
-    password: '',
+    password: '@GKMcmr135#',
     database: 'crown_db'
 });
 conexionMysql.connect(function (err) {
@@ -74,6 +74,20 @@ app.get('/comuna/:id', function (req, res) {
         res.status(200).send(res1);
     });
 });
+app.get('/buscarusuarios', function (req, res) {
+    conexionMysql.query("select * from usuarios", function (req1, res1) {
+        console.log(res1);
+        res.status(200).send(res1);
+    });
+});
+app.get('/buscarusuarios/:id', function (req, res) {
+    var id = req.params.id;
+    conexionMysql.query("select * from usuarios where id=?", id, function (req1, res1) {
+        console.log(res1);
+        console.log("res1.nombres");
+        res.status(200).send(res1);
+    });
+});
 //app.use(bodyparser.json())
 app.post('/crearusuario', bodyparser.json(), function (req, res) {
     var nombres = req.body.nombres;
@@ -85,7 +99,8 @@ app.post('/crearusuario', bodyparser.json(), function (req, res) {
     var comuna = req.body.comuna;
     var correo = req.body.correo;
     var contraseña = req.body.contraseña;
-    conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña)VALUES('" + nombres + "','" + apellidos + "','" + rut + "','" + direccion + "','" + region + "','" + provincia + "','" + comuna + "','" + correo + "','" + contraseña + "')", function (req1, res1) {
+    var admi = 0;
+    conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña,admi)VALUES('" + nombres + "','" + apellidos + "','" + rut + "','" + direccion + "','" + region + "','" + provincia + "','" + comuna + "','" + correo + "','" + contraseña + "','" + admi + "')", function (req1, res1) {
         res.status(201).send(JSON.stringify("Usuario " + nombres + " creado con el id: " + res1.insertId));
     });
 });

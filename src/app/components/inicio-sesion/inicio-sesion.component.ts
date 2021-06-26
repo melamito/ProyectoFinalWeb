@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor() { }
+siteKey: string;
+
+
+  constructor() {
+    this.siteKey = '6LejhFgbAAAAAF2O6ULxiOp4N78L2rQey9grLd2L';
+   }
 
   ngOnInit(): void {
   }

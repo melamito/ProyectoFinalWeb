@@ -31,7 +31,9 @@ export class RegistroComponent implements OnInit {
 
   idregion: number= 0;
   idprovincia:number=0;
+  agregar:boolean=true;
 
+  listaClientes:Array<Usuario>=[];
   listaRegiones:Array<Region>=[];
   listaProvincias:Array<Provincia>=[];
   listaComunas:Array<Comuna>=[];
@@ -45,7 +47,8 @@ export class RegistroComponent implements OnInit {
     provincia:0,
     comuna:0,
     correo:"",
-    contraseña:""
+    contraseña:"",
+    admi:0
   }
 
   ngOnInit(): void {
@@ -53,6 +56,11 @@ export class RegistroComponent implements OnInit {
       this.listaRegiones=Regiones;
     });
     
+    this.servicio.Buscarcliente().subscribe(respuesta=>{
+      for (var index in respuesta){
+        this.listaClientes=respuesta;
+      }
+    })
   }
 
   private buildForm() {
@@ -87,6 +95,7 @@ export class RegistroComponent implements OnInit {
   }
 
   save(event:Event){
+    this.agregar=true;
     event.preventDefault();
     const valor=this.formulario.value;
     this.nuevo.nombres=valor.nombres
@@ -99,6 +108,18 @@ export class RegistroComponent implements OnInit {
     this.nuevo.correo=valor.correo
     this.nuevo.contraseña=valor.contraseña
 
+    for (var index in this.listaClientes){
+      console.log("comparando ",this.nuevo.rut," con ",this.listaClientes[index].rut )
+      if (this.nuevo.rut==this.listaClientes[index].rut){
+        this.agregar=false;
+        console.log("Ya existe el rut")
+      }
+      console.log("comparando ",this.nuevo.correo," con ",this.listaClientes[index].correo )
+      if (this.nuevo.correo===this.listaClientes[index].correo){
+        this.agregar=false;
+        console.log("Ya existe el correo")
+      }
+    }
     
     this.servicio.crearCliente(this.nuevo).subscribe(respuesta=>{
       console.log(respuesta)

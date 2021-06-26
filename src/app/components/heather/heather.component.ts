@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder, FormGroup} from '@angular/forms';
+import {BuscarService} from '../../services/buscar.service'
 
 @Component({
   selector: 'app-heather',
@@ -10,11 +11,12 @@ import{FormBuilder, FormGroup} from '@angular/forms';
 export class HeatherComponent implements OnInit {
 
   formulario:FormGroup;
+  palabraFiltro:string="";
 
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder, private servicio:BuscarService) {
 
     this.formulario=this.fb.group({
-      texto:['']
+      buscar:['']
     });
 
    }
@@ -23,7 +25,9 @@ export class HeatherComponent implements OnInit {
   }
 
   buscarProducto(){
-    console.log(this.formulario.get('texto')?.value);
+    var valor:string=this.formulario.get("buscar")?.value;
+    this.servicio.data.next(valor)
+    //console.log(this.formulario.get('buscar')?.value);
   }
 
 }
