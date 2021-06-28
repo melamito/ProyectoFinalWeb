@@ -20,7 +20,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { BuscarPipe } from './pipes/buscar.pipe';
 import { NgxCaptchaModule } from 'ngx-captcha';
-
+import { SearchComponent } from './components/search/search.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     ContactoComponent,
     RegistroComponent,
     BuscadorComponent,
-    BuscarPipe
+    BuscarPipe,
+    SearchComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

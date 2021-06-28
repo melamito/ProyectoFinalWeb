@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder, FormGroup} from '@angular/forms';
-import {BuscarService} from '../../services/buscar.service'
+import {BuscarService} from '../../services/buscar.service';
+import { Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-heather',
@@ -26,7 +27,7 @@ export class HeatherComponent implements OnInit {
 
   buscarProducto(){
     var valor:string=this.formulario.get("buscar")?.value;
-    this.servicio.data.next(valor)
+    this.servicio.data.next(valor);
     //console.log(this.formulario.get('buscar')?.value);
   }
 

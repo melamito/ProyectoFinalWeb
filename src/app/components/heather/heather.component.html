@@ -61,8 +61,8 @@
       <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Ingresar</a></a>
     </li>
     <!--CARRITO DE COMPRAS-->
-    <li ngbNavItem class="carrito">
-      <a ngbNavLink class="estiloLetras"><i class="fas fa-shopping-cart"></i></a>
+    <li ngbNavItem class="carrito"> 
+    <a ngbNavLink class="estiloLetras">Carrito<i class="fas fa-shopping-cart"></i></a>
     </li>
     <!--REGISTRO-->
     <li ngbNavItem class="item">
@@ -72,26 +72,31 @@
   <div [ngbNavOutlet]="nav"></div>
 </nav>
 
-
 <!--Buscador Karii-->
+<!---
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <div class="container h-100">
   <div class="d-flex justify-content-center h-100">
     <div class="searchbar">
-      <input class="search_input" type="text" name="" placeholder="Search...">
-      <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+   <input class="search_input" type="search"  name="buscarProducto" placeholder="Buscar" [(ngModel)]="buscarProducto">
+      <tr *ngFor= "let producto of productos | buscar:buscarProducto"  >
+        <td>{{producto.id}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.precio}}</td>
     </div>
   </div>
 </div>
+-->
 
-<!--Buscador-->
-<!--
+
+<!--Buscador Palta
 <form class="buscador" [formGroup]="formulario" (submit)="buscarProducto()">
-  <input placeholder="Buscar" class="searchingBox" type='text' formControlName="buscar" (keypress)="buscar()">
+  <input placeholder="Buscar" class="searchingBox" type='text' formControlName="buscar" (keypress)="buscarProducto()">
   <button class="buttonStyle">Buscar</button>
 </form>
 -->
+
 <!--Buscador bootstrap-->
 <!--<nav class="navbar navbar-light bg-light" class="buscador">
   <div class="container-fluid" class="cajaBuscador">

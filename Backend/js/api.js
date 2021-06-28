@@ -88,6 +88,21 @@ app.get('/buscarusuarios/:id', function (req, res) {
         res.status(200).send(res1);
     });
 });
+app.get('/login', function (req, res) {
+    var correo = req.query.correo;
+    var clave = req.query.clave;
+    console.log(correo);
+    console.log(clave);
+    conexionMysql.query("SELECT * FROM usuarios where correo=? and contraseña=md5(?)", [correo, clave], function (error, resultados, fields) {
+        console.log(resultados);
+        if (error) {
+            throw (error);
+        }
+        else {
+            res.send(resultados);
+        }
+    });
+});
 //app.use(bodyparser.json())
 app.post('/crearusuario', bodyparser.json(), function (req, res) {
     var nombres = req.body.nombres;
@@ -100,7 +115,7 @@ app.post('/crearusuario', bodyparser.json(), function (req, res) {
     var correo = req.body.correo;
     var contraseña = req.body.contraseña;
     var admi = 0;
-    conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña,admi)VALUES('" + nombres + "','" + apellidos + "','" + rut + "','" + direccion + "','" + region + "','" + provincia + "','" + comuna + "','" + correo + "','" + contraseña + "','" + admi + "')", function (req1, res1) {
+    conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña,admi)VALUES('" + nombres + "','" + apellidos + "','" + rut + "','" + direccion + "','" + region + "','" + provincia + "','" + comuna + "','" + correo + "',md5('" + contraseña + "'),'" + admi + "')", function (req1, res1) {
         res.status(201).send(JSON.stringify("Usuario " + nombres + " creado con el id: " + res1.insertId));
     });
 });

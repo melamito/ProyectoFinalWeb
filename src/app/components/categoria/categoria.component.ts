@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Producto} from '../../interfaces/producto';
 import {BuscarService} from '../../services/buscar.service'
 import { ActivatedRoute } from '@angular/router';
-import { newArray } from '@angular/compiler/src/util';
+import { newArray } from '@angular/compiler/src/util'; 
 
 
 @Component({

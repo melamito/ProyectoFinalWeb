@@ -2,6 +2,7 @@ import { OnInit, Component } from '@angular/core'
 import {Producto} from '../../interfaces/producto';
 import {BuscarService} from '../../services/buscar.service'
 import { ActivatedRoute } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-buscador',
@@ -10,10 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BuscadorComponent implements OnInit {
 
+  buscarProductos = '';
+ 
+
   productos:Producto[]=[];
   constructor(private serviciobuscar:BuscarService) { }
 
   ngOnInit(): void {
   }
-
 }

@@ -3,24 +3,23 @@
     <h1 class=titulo>Inicio de sesion</h1>
   <!--Este es el logo-->
     <img id="imagen" src="./assets/icono.jpg">
+    <h5 class="mensaje">{{mensaje}}</h5>
   <!--Aqui esta el formulario del inicio de sesion-->
-    <form class=formulario> 
+    <form class="formulario" id="formulario" [formGroup]="formulario" (ngSubmit)="search($event)"> 
       <!--Este div es el de usuario-->
         <div class="form-group">
           <label for="Usuario" class=texto >Usuario</label>
-          <input type="email" class="form-control" id="Usuario" aria-describedby="emailHelp" placeholder="Usuario">
+          <input type="email" class="form-control" id="usuario" formControlName="usuario" aria-describedby="emailHelp" placeholder="Usuario">
           
         </div>
       <!--Este div es el de contraseña-->
         <div class="form-group">
           <label for="contraseña" class="texto">Contraseña</label>
-          <input type="password" class="form-control" id="contraseña" placeholder="contraseña">
+          <input type="password" class="form-control" id="contraseña" formControlName="contraseña" placeholder="contraseña">
         </div>
-        <div class="form-group">
-        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" (success)="validacion($event)"></ngx-recaptcha2>
-       </div>
+       
 
       <!--Este es el boton c:-->  
-        <button type="submit" class="btn btn-primary">Acceder</button>
+        <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Acceder</button>
     </form>
 </div>

@@ -10,7 +10,7 @@ import { TrabajoComponent } from '../app/components/trabajo/trabajo.component'
 import { AgradecimientoComponent } from './components/agradecimiento/agradecimiento.component';
 import { HorarioComponent } from './components/horario/horario.component';
 import { RegistroComponent} from './components/registro/registro.component';
-import { BuscadorComponent } from './components/buscador/buscador.component' 
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -23,7 +23,8 @@ const routes: Routes = [
   {path:'agradecimientos',component:AgradecimientoComponent},
   {path:'horario',component:HorarioComponent},
   {path:'registro',component:RegistroComponent},
-  {path: 'resultados', component:BuscadorComponent}
+  {path: 'resultados', component:BuscadorComponent},
+  { path: 'buscar/:palabra', component: BuscadorComponent }
 ];
 
 @NgModule({

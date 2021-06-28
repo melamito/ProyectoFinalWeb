@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http'
+import {HttpClient, HttpHeaders,HttpParams} from '@angular/common/http'
 import { Usuario } from '../interfaces/usuario'
 import {Observable} from 'rxjs'
 import {Subject} from 'rxjs'
@@ -49,4 +49,8 @@ export class BuscarService {
     return this.servicio.get(`${this.servidor}/buscarusuariorut/${id}`)
   }
 
+  Login(correo:string,clave:string):Observable<any>{
+    console.log("servicoo:",correo)
+    return this.servicio.get(`${this.servidor}/login?correo=${JSON.stringify(correo)}&clave=${JSON.stringify(clave)}`,httpOptions)
+  }
 }

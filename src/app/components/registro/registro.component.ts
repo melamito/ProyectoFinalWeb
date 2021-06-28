@@ -32,6 +32,7 @@ export class RegistroComponent implements OnInit {
   idregion: number= 0;
   idprovincia:number=0;
   agregar:boolean=true;
+  mensaje:string="";
 
   listaClientes:Array<Usuario>=[];
   listaRegiones:Array<Region>=[];
@@ -52,15 +53,14 @@ export class RegistroComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.mensaje=""
     this.servicio.Regiones().subscribe(Regiones=>{
       this.listaRegiones=Regiones;
     });
     
     this.servicio.Buscarcliente().subscribe(respuesta=>{
-      for (var index in respuesta){
         this.listaClientes=respuesta;
-      }
-    })
+    });
   }
 
   private buildForm() {
@@ -96,7 +96,6 @@ export class RegistroComponent implements OnInit {
 
   save(event:Event){
     this.agregar=true;
-    event.preventDefault();
     const valor=this.formulario.value;
     this.nuevo.nombres=valor.nombres
     this.nuevo.apellidos=valor.apellidos
@@ -108,7 +107,7 @@ export class RegistroComponent implements OnInit {
     this.nuevo.correo=valor.correo
     this.nuevo.contraseña=valor.contraseña
 
-    for (var index in this.listaClientes){
+   /* for (var index in this.listaClientes){
       console.log("comparando ",this.nuevo.rut," con ",this.listaClientes[index].rut )
       if (this.nuevo.rut==this.listaClientes[index].rut){
         this.agregar=false;
@@ -119,9 +118,10 @@ export class RegistroComponent implements OnInit {
         this.agregar=false;
         console.log("Ya existe el correo")
       }
-    }
-    
+    }*/
     this.servicio.crearCliente(this.nuevo).subscribe(respuesta=>{
+      this.mensaje="Usuario creado"
+      this.formulario.reset()
       console.log(respuesta)
     });
   }

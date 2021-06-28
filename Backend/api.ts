@@ -11,7 +11,7 @@ import { createConnection } from "net";
     }))
 
     app.use(cors())
-
+ 
     const config={
         server: "127.0.0.1",
         port: 3000
@@ -104,6 +104,22 @@ import { createConnection } from "net";
         });
     });
 
+    app.get('/login',(req:any,res:any)=>{
+        let correo=req.query.correo;
+        let clave=req.query.clave;
+        console.log(correo)
+        console.log(clave)
+        conexionMysql.query("SELECT * FROM usuarios where correo=? and contraseña=md5(?)",[correo,clave],function(error:any,resultados:any,fields:any){
+            console.log(resultados)
+
+            if(error){
+                throw(error)
+            }else{
+                res.send(resultados)
+            }
+        })
+    })
+
     //app.use(bodyparser.json())
 
     app.post('/crearusuario',bodyparser.json(),(req:any,res:any)=>{
@@ -118,7 +134,7 @@ import { createConnection } from "net";
         let contraseña=req.body.contraseña
         let admi=0
 
-        conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña,admi)VALUES('"+nombres+"','"+apellidos+"','"+rut+"','"+direccion+"','"+region+"','"+provincia+"','"+comuna+"','"+correo+"','"+contraseña+"','"+admi+"')",(req1:any,res1:any)=>{
+        conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña,admi)VALUES('"+nombres+"','"+apellidos+"','"+rut+"','"+direccion+"','"+region+"','"+provincia+"','"+comuna+"','"+correo+"',md5('"+contraseña+"'),'"+admi+"')",(req1:any,res1:any)=>{
             res.status(201).send(JSON.stringify(`Usuario ${nombres} creado con el id: ${res1.insertId}`));
         });
 

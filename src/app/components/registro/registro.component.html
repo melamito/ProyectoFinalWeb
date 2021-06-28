@@ -5,6 +5,7 @@
         <div class="form-group">
             <h1 class="titulo">Formulario de registro</h1>
         </div>
+        <h2>{{mensaje}}</h2>
         <br>
         <!--Nombres del cliente-->
         <div class="form-group">
@@ -64,9 +65,9 @@
             <input type="text" id="contraseña" formControlName="contraseña">
         </div>
         <div class="form-group boton">
-            <a [routerLink]="['/agradecimientos']" routerLinkActive="router-link-active">
+            <!--<a [routerLink]="['/agradecimientos']" routerLinkActive="router-link-active">-->
                 <button type="submit" [disabled]="formulario.invalid"> Enviar</button>
-            </a>
+            <!--</a>-->
         </div>
     </form>
 </div> 
