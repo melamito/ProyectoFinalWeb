@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-06-2021 a las 18:38:47
+-- Tiempo de generación: 29-06-2021 a las 06:03:00
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `crown_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `id_carrito` int(11) NOT NULL,
+  `precio_total` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -513,6 +525,18 @@ INSERT INTO `productos` (`id`, `nombre`, `cantidad`, `precio`, `imagen`, `sexo`,
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `productos_carrito`
+--
+
+CREATE TABLE `productos_carrito` (
+  `id_producto` int(11) NOT NULL,
+  `id_carrito` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `provincias`
 --
 
@@ -587,6 +611,20 @@ INSERT INTO `provincias` (`id`, `provincia`, `region_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `puntuacion`
+--
+
+CREATE TABLE `puntuacion` (
+  `id_puntuacion` int(11) NOT NULL,
+  `puntaje` int(11) NOT NULL,
+  `comentario` varchar(50) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `regiones`
 --
 
@@ -626,7 +664,7 @@ INSERT INTO `regiones` (`id`, `region`, `abreviatura`, `capital`) VALUES
 --
 
 CREATE TABLE `usuarios` (
-  `id` int(10) NOT NULL,
+  `id` int(11) NOT NULL,
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `rut` varchar(50) NOT NULL,
@@ -646,11 +684,20 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `rut`, `direccion`, `region`, `provincia`, `comuna`, `correo`, `contraseña`, `admi`) VALUES
 (1, 'Admin', 'Admin', '12345678-9', 'calle falsa 123', 7, 23, 101, 'admin@gmail.com', '274c3717a699d42cc89ce080650115a8', 1),
 (5, 'Maria gabriela', 'Castro Almendra', '19488487-7', 'los pomelos #828', 6, 17, 60, 'gaby.castro@outlook.com', '985f4dccda9aa346a0aa025ff246c434', 0),
-(6, 'Helen anny', 'Silva Cerda', '19357909-4', 'marga marga sin numero', 6, 21, 79, 'helen@gmail.com', 'e69dc2c09e8da6259422d987ccbe95b5', 0);
+(6, 'Helen anny', 'Silva Cerda', '19357909-4', 'marga marga sin numero', 6, 21, 79, 'helen@gmail.com', 'e69dc2c09e8da6259422d987ccbe95b5', 0),
+(7, 'Karina Andrea', 'Rozas Romo', '20004006-6', 'irma salas silva 4488 Macul', 7, 23, 101, 'karina.rozas.romo@hotmail.com', '25b75828d59d5d126e0faa7aab654017', 0),
+(8, 'Karina Noemi ', 'Matamala Palta', '20468825-7', 'Hugo españa flores 118 ', 7, 25, 122, 'karinanmp169@gmail.com', 'ce26462e4da3b6504432266af334bc6b', 0);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD PRIMARY KEY (`id_carrito`),
+  ADD KEY `fkidUsuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `comunas`
@@ -665,10 +712,25 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `productos_carrito`
+--
+ALTER TABLE `productos_carrito`
+  ADD PRIMARY KEY (`id_producto`,`id_carrito`),
+  ADD KEY `id_carrito` (`id_carrito`);
+
+--
 -- Indices de la tabla `provincias`
 --
 ALTER TABLE `provincias`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `puntuacion`
+--
+ALTER TABLE `puntuacion`
+  ADD PRIMARY KEY (`id_puntuacion`),
+  ADD KEY `fkIdProducto` (`id_producto`),
+  ADD KEY `fkIdUsuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `regiones`
@@ -705,6 +767,12 @@ ALTER TABLE `provincias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
+-- AUTO_INCREMENT de la tabla `puntuacion`
+--
+ALTER TABLE `puntuacion`
+  MODIFY `id_puntuacion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `regiones`
 --
 ALTER TABLE `regiones`
@@ -714,7 +782,31 @@ ALTER TABLE `regiones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD CONSTRAINT `id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `productos_carrito`
+--
+ALTER TABLE `productos_carrito`
+  ADD CONSTRAINT `id_carrito` FOREIGN KEY (`id_carrito`) REFERENCES `carrito` (`id_carrito`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_productos` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `puntuacion`
+--
+ALTER TABLE `puntuacion`
+  ADD CONSTRAINT `id_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `puntuacion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
