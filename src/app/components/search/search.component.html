@@ -1,5 +1,19 @@
 <ul>
-    <li *ngFor="let item of Lista | buscar: palabraFiltro">
-        {{item.nombre}}
+    <li *ngFor="let item of Lista | buscar: palabrafiltro" class="cuadricula">
+        <img src="{{item.imagen}}" class=imagen>
+        <div class="nombre">
+          <p class="texto">{{item.nombre}}</p>
+        </div>
+        <div class="precios" *ngIf="item.oferta>0">
+          <p class="tachado">${{item.precio}}</p>
+          <p class="text">${{item.oferta}}</p>
+        </div>
+        <div class="precio" *ngIf="item.oferta==0">
+          <p class="texto">${{item.precio}}</p>
+        </div>
+        <div class="stock">
+            <a [routerLink]="['/producto',item.id]" routerLinkActive="router-link-active"><button *ngIf="item.cantidad>0">Detalles</button></a>
+        </div>
     </li>
 </ul>
+

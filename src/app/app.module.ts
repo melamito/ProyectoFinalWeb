@@ -17,11 +17,11 @@ import { AgradecimientoComponent } from './components/agradecimiento/agradecimie
 import { HorarioComponent } from './components/horario/horario.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { RegistroComponent } from './components/registro/registro.component';
-import { BuscadorComponent } from './components/buscador/buscador.component';
 import { BuscarPipe } from './pipes/buscar.pipe';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SearchComponent } from './components/search/search.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { CuentaComponent } from './components/cuenta/cuenta.component';
 
 @NgModule({
   declarations: [
@@ -38,10 +38,10 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     HorarioComponent,
     ContactoComponent,
     RegistroComponent,
-    BuscadorComponent,
     BuscarPipe,
     SearchComponent,
-    CarritoComponent
+    CarritoComponent,
+    CuentaComponent
   ],
   imports: [
     BrowserModule,

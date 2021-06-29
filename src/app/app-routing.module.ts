@@ -10,21 +10,24 @@ import { TrabajoComponent } from '../app/components/trabajo/trabajo.component'
 import { AgradecimientoComponent } from './components/agradecimiento/agradecimiento.component';
 import { HorarioComponent } from './components/horario/horario.component';
 import { RegistroComponent} from './components/registro/registro.component';
-import { BuscadorComponent } from './components/buscador/buscador.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { CuentaComponent } from './components/cuenta/cuenta.component'
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'sesion',component:InicioSesionComponent},
-  {path:'producto/:id',component:ProductoComponent},
-  {path:'nosotros',component:QuieneSomosComponent},
-  {path:'contacto',component:ContactoComponent},
-  {path:'categoria/:sexo/:cat',component:CategoriaComponent},
-  {path:'trabajo',component:TrabajoComponent},
-  {path:'agradecimientos',component:AgradecimientoComponent},
-  {path:'horario',component:HorarioComponent},
-  {path:'registro',component:RegistroComponent},
-  {path: 'resultados', component:BuscadorComponent},
-  { path: 'buscar/:palabra', component: BuscadorComponent }
+  {path: '', component:HomeComponent},
+  {path: 'sesion',component:InicioSesionComponent},
+  {path: 'producto/:id',component:ProductoComponent},
+  {path: 'nosotros',component:QuieneSomosComponent},
+  {path: 'contacto',component:ContactoComponent},
+  {path: 'categoria/:sexo/:cat',component:CategoriaComponent},
+  {path: 'trabajo',component:TrabajoComponent},
+  {path: 'agradecimientos',component:AgradecimientoComponent},
+  {path: 'horario',component:HorarioComponent},
+  {path: 'registro',component:RegistroComponent},
+  {path: 'carrito', component: CarritoComponent},
+  {path: 'cuenta', component:CuentaComponent},
+  {path: 'busqueda',component:SearchComponent}
 ];
 
 @NgModule({

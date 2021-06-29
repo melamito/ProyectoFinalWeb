@@ -1,0 +1,82 @@
+#productos{
+    list-style-type: none; 
+    margin-left: 10%;
+    width: 80%;
+    padding:0px;
+}
+
+.cuadricula{
+    width: 25%;
+    height: 400px;
+    padding:2.5%;
+    display: inline-block;
+}
+
+.precio{
+    width: 100%;
+    height: 55px;
+    display:inline-table
+}
+
+.precios{
+    width: 100%;
+    height: 55px;
+}
+
+.text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.texto{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nombre{
+    width: 100%;
+    height: 65px;
+    display:inline-table
+}
+
+.tachado{
+    text-align: center;
+    font-size: 15px;
+    text-decoration: line-through;
+    margin:0;
+    padding:0;
+}
+
+.stock{
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.imagen{
+    width: 100%;
+}
+
+button{
+    background-color: #594f46;
+    color:#d9d6d2;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: #d98555;
+    color:#f2e3d5;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.titulo{
+    width: 100%;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

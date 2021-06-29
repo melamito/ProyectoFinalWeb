@@ -3,7 +3,7 @@ import { FormGroup,FormBuilder,FormControl,Validators } from '@angular/forms'
 import { Provincia } from '../../interfaces/provincia'
 import { Region } from '../../interfaces/region'
 import { Comuna } from '../../interfaces/comuna'
-import { Usuario } from '../../interfaces/usuario'
+import { Usuario,NULO } from '../../interfaces/usuario'
 import {BuscarService} from '../../services/buscar.service'
 
 @Component({
@@ -38,19 +38,7 @@ export class RegistroComponent implements OnInit {
   listaRegiones:Array<Region>=[];
   listaProvincias:Array<Provincia>=[];
   listaComunas:Array<Comuna>=[];
-  nuevo:Usuario={
-    id:0,
-    nombres:"",
-    apellidos:"",
-    rut:"",
-    direccion:"",
-    region:0,
-    provincia:0,
-    comuna:0,
-    correo:"",
-    contraseña:"",
-    admi:0
-  }
+  nuevo:Usuario=NULO
 
   ngOnInit(): void {
     this.mensaje=""
@@ -122,7 +110,12 @@ export class RegistroComponent implements OnInit {
     this.servicio.crearCliente(this.nuevo).subscribe(respuesta=>{
       this.mensaje="Usuario creado"
       this.formulario.reset()
-      console.log(respuesta)
+      this.nuevo=respuesta
+      /*this.servicio.CrearCarrito(this.nuevo).subscribe(respuesta1=>{
+        console.log("Carrito:",respuesta1)
+      });*/
     });
+    
+
   }
 }

@@ -17,6 +17,10 @@
           <label for="contraseña" class="texto">Contraseña</label>
           <input type="password" class="form-control" id="contraseña" formControlName="contraseña" placeholder="contraseña">
         </div>
+
+        <!--Captcha-->
+        <ngx-recaptcha2  #captchaElem [siteKey]="siteKey" formControlName="captcha" (success)="handleSuccess($event)"></ngx-recaptcha2>
+
        
 
       <!--Este es el boton c:-->  

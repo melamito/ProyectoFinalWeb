@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-06-2021 a las 04:29:53
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.7
+-- Tiempo de generación: 28-06-2021 a las 18:38:47
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,10 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `crow_db`
+-- Base de datos: `crown_db`
 --
-CREATE DATABASE IF NOT EXISTS `crown_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `crown_db`;
 
 -- --------------------------------------------------------
 
@@ -29,16 +27,11 @@ USE `crown_db`;
 -- Estructura de tabla para la tabla `comunas`
 --
 
-DROP TABLE IF EXISTS `comunas`;
 CREATE TABLE `comunas` (
   `id` int(11) NOT NULL,
   `comuna` varchar(64) NOT NULL,
   `provincia_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- RELACIONES PARA LA TABLA `comunas`:
---
 
 --
 -- Volcado de datos para la tabla `comunas`
@@ -398,7 +391,6 @@ INSERT INTO `comunas` (`id`, `comuna`, `provincia_id`) VALUES
 -- Estructura de tabla para la tabla `productos`
 --
 
-DROP TABLE IF EXISTS `productos`;
 CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
@@ -411,10 +403,6 @@ CREATE TABLE `productos` (
   `oferta` int(11) NOT NULL,
   `Comentarios` varchar(500) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- RELACIONES PARA LA TABLA `productos`:
---
 
 --
 -- Volcado de datos para la tabla `productos`
@@ -528,16 +516,11 @@ INSERT INTO `productos` (`id`, `nombre`, `cantidad`, `precio`, `imagen`, `sexo`,
 -- Estructura de tabla para la tabla `provincias`
 --
 
-DROP TABLE IF EXISTS `provincias`;
 CREATE TABLE `provincias` (
   `id` int(11) NOT NULL,
   `provincia` varchar(64) NOT NULL,
   `region_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- RELACIONES PARA LA TABLA `provincias`:
---
 
 --
 -- Volcado de datos para la tabla `provincias`
@@ -607,17 +590,12 @@ INSERT INTO `provincias` (`id`, `provincia`, `region_id`) VALUES
 -- Estructura de tabla para la tabla `regiones`
 --
 
-DROP TABLE IF EXISTS `regiones`;
 CREATE TABLE `regiones` (
   `id` int(11) NOT NULL,
   `region` varchar(64) NOT NULL,
   `abreviatura` varchar(4) NOT NULL,
   `capital` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- RELACIONES PARA LA TABLA `regiones`:
---
 
 --
 -- Volcado de datos para la tabla `regiones`
@@ -647,7 +625,6 @@ INSERT INTO `regiones` (`id`, `region`, `abreviatura`, `capital`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(10) NOT NULL,
   `nombres` varchar(50) NOT NULL,
@@ -658,19 +635,18 @@ CREATE TABLE `usuarios` (
   `provincia` int(11) NOT NULL,
   `comuna` int(10) NOT NULL,
   `correo` varchar(50) NOT NULL,
-  `contraseña` varchar(255) NOT NULL
+  `contraseña` varchar(255) NOT NULL,
+  `admi` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- RELACIONES PARA LA TABLA `usuarios`:
---
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `rut`, `direccion`, `region`, `provincia`, `comuna`, `correo`, `contraseña`) VALUES
-(1, 'Admin', 'Admin', '12345678-9', 'calle falsa 123', 7, 23, 101, 'admin@gmail.com', 'C????# ??????');
+INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `rut`, `direccion`, `region`, `provincia`, `comuna`, `correo`, `contraseña`, `admi`) VALUES
+(1, 'Admin', 'Admin', '12345678-9', 'calle falsa 123', 7, 23, 101, 'admin@gmail.com', '274c3717a699d42cc89ce080650115a8', 1),
+(5, 'Maria gabriela', 'Castro Almendra', '19488487-7', 'los pomelos #828', 6, 17, 60, 'gaby.castro@outlook.com', '985f4dccda9aa346a0aa025ff246c434', 0),
+(6, 'Helen anny', 'Silva Cerda', '19357909-4', 'marga marga sin numero', 6, 21, 79, 'helen@gmail.com', 'e69dc2c09e8da6259422d987ccbe95b5', 0);
 
 --
 -- Índices para tablas volcadas
@@ -738,7 +714,7 @@ ALTER TABLE `regiones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,23 +1,23 @@
 <!--Sin nada-->
-<nav class="header">
+<nav id="header">
   <ul ngbNav #nav="ngbNav" class="nav-tabs" class="menu">
     <!--Home-->
     <li ngbNavItem class="item">
-      <a ngbNavLink [routerLink]="['/']" routerLinkActive="router-link-active" class="estiloLetras">
+      <a ngbNavLink [routerLink]="['/']" routerLinkActive="router-link-active">
         Home
       </a>
     </li>
     <!--Categorias de ropa-->
     <li ngbNavItem class="item">
-      <a ngbNavLink class="estiloLetras">Categorias</a>
-      <ng-template ngbNavContent>
+      <a ngbNavLink>Categorias</a>
+      <!--<ng-template ngbNavContent>-->
         <!--Lista de Categorias-->
         <ul ngbNav class="categoria">
           <!--SUBCATEGORIA MUJER-->
-          <li class="subcategoria">
-            <a ngbNavLink class="tipo">Mujer</a>
+          <li>
+            <a ngbNavLink>Mujer</a>
             <!--Lista categoria MUJER-->
-            <ul class="lista">
+            <ul>
               <li><a [routerLink]="['/categoria','1','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
               <li><a [routerLink]="['/categoria','1','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
               <li><a [routerLink]="['/categoria','1','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
@@ -26,10 +26,10 @@
             </ul>
           </li>
           <!--SUBCATEGORIA HOMBRE-->
-          <li class="subcategoria">
-            <a ngbNavLink class="tipo">Hombre</a>
+          <li>
+            <a ngbNavLink>Hombre</a>
             <!--Lista categoria HOMBRE-->
-            <ul class="lista">
+            <ul>
               <li><a [routerLink]="['/categoria','2','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
               <li><a [routerLink]="['/categoria','2','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
               <li><a [routerLink]="['/categoria','2','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
@@ -38,10 +38,10 @@
             </ul>
           </li>
           <!--SUBCATEGORIA NIÑES-->
-          <li class="subcategoria">
-            <a ngbNavLink class="tipo">Niñes</a>
+          <li>
+            <a ngbNavLink>Niñes</a>
             <!--Lista categoria NIÑES-->
-            <ul class="lista">
+            <ul>
               <li><a [routerLink]="['/categoria','3','11']" routerLinkActive="router-link-active" class="link">Poleras</a></li>
               <li><a [routerLink]="['/categoria','3','12']" routerLinkActive="router-link-active" class="link">Polerones</a></li>
               <li><a [routerLink]="['/categoria','3','13']" routerLinkActive="router-link-active" class="link">Pantalones</a></li>
@@ -50,7 +50,7 @@
             </ul>
           </li>
         </ul>
-      </ng-template>
+      <!--</ng-template>-->
     </li>
     <!--MARCA AL CENTRO-->
     <li ngbNavItem class="centro">
@@ -58,53 +58,29 @@
     </li>
     <!--INICIAR SESION-->
     <li ngbNavItem class="item">
-      <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Ingresar</a></a>
-    </li>
-    <!--CARRITO DE COMPRAS-->
-    <li ngbNavItem class="carrito"> 
-    <a ngbNavLink class="estiloLetras">Carrito<i class="fas fa-shopping-cart"></i></a>
+      <a [routerLink]="['/sesion']" routerLinkActive="router-link-active"><a ngbNavLink>Cuenta</a></a>
     </li>
     <!--REGISTRO-->
     <li ngbNavItem class="item">
-      <a [routerLink]="['/registro']" routerLinkActive="router-link-active"><a ngbNavLink class="estiloLetras">Registro</a></a>
+      <a [routerLink]="['/registro']" routerLinkActive="router-link-active"><a ngbNavLink>Registro</a></a>
+    </li>
+     <!--CARRITO DE COMPRAS-->
+      <li ngbNavItem class="item"> 
+        <a [routerLink]="['/carrito']" routerLinkActive="router-link-active"><a ngbNavLink>Carrito</a></a>
     </li>
   </ul>
   <div [ngbNavOutlet]="nav"></div>
 </nav>
 
-<!--Buscador Karii-->
-<!---
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<div class="container h-100">
-  <div class="d-flex justify-content-center h-100">
-    <div class="searchbar">
-   <input class="search_input" type="search"  name="buscarProducto" placeholder="Buscar" [(ngModel)]="buscarProducto">
-      <tr *ngFor= "let producto of productos | buscar:buscarProducto"  >
-        <td>{{producto.id}}</td>
-        <td>{{producto.nombre}}</td>
-        <td>{{producto.precio}}</td>
-    </div>
-  </div>
-</div>
--->
 
+<!--Buscador-->
 
-<!--Buscador Palta
 <form class="buscador" [formGroup]="formulario" (submit)="buscarProducto()">
   <input placeholder="Buscar" class="searchingBox" type='text' formControlName="buscar" (keypress)="buscarProducto()">
-  <button class="buttonStyle">Buscar</button>
+  <button class="buttonStyle"><a [routerLink]="['/busqueda']" routerLinkActive="router-link-active">Buscar</a></button>
 </form>
--->
 
-<!--Buscador bootstrap-->
-<!--<nav class="navbar navbar-light bg-light" class="buscador">
-  <div class="container-fluid" class="cajaBuscador">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-      <button class="btn btn-outline-success" class="estiloBoton" type="submit">Buscar</button>
-    </form>
-  </div>
-</nav>-->
+
+
 
 

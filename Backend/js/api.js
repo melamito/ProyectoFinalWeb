@@ -92,14 +92,13 @@ app.get('/login', function (req, res) {
     var correo = req.query.correo;
     var clave = req.query.clave;
     console.log(correo);
-    console.log(clave);
-    conexionMysql.query("SELECT * FROM usuarios where correo=? and contraseña=md5(?)", [correo, clave], function (error, resultados, fields) {
+    conexionMysql.query("SELECT * FROM usuarios where correo=" + correo + " and contrase\u00F1a=md5(" + clave + ")", function (error, resultados, fields) {
         console.log(resultados);
         if (error) {
             throw (error);
         }
         else {
-            res.send(resultados);
+            res.status(200).send(resultados);
         }
     });
 });
@@ -117,7 +116,17 @@ app.post('/crearusuario', bodyparser.json(), function (req, res) {
     var admi = 0;
     conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña,admi)VALUES('" + nombres + "','" + apellidos + "','" + rut + "','" + direccion + "','" + region + "','" + provincia + "','" + comuna + "','" + correo + "',md5('" + contraseña + "'),'" + admi + "')", function (req1, res1) {
         res.status(201).send(JSON.stringify("Usuario " + nombres + " creado con el id: " + res1.insertId));
+        console.log("res1", res1);
     });
+});
+app.post("/crearcarro", bodyparser.json(), function (req, res) {
+    var id = req.body.id;
+    var num = 0;
+    conexionMysql.query("INSERT INTO carrito(precio_total,id_usuario)VALUES('" + num + "','" + id + "')", function (req1, res1) {
+        res.status(201).send(JSON.stringify("Carrito creadocon id " + res1.insertId));
+    });
+});
+app.post("/agregarcarrito", bodyparser.json(), function (req, res) {
 });
 /*
     Debo recordar hacer tsc --watch para que se vaya generando mi archivo js

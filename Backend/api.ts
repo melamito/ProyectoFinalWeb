@@ -108,14 +108,13 @@ import { createConnection } from "net";
         let correo=req.query.correo;
         let clave=req.query.clave;
         console.log(correo)
-        console.log(clave)
-        conexionMysql.query("SELECT * FROM usuarios where correo=? and contraseña=md5(?)",[correo,clave],function(error:any,resultados:any,fields:any){
+        conexionMysql.query(`SELECT * FROM usuarios where correo=${correo} and contraseña=md5(${clave})`,function(error:any,resultados:any,fields:any){
             console.log(resultados)
 
             if(error){
                 throw(error)
             }else{
-                res.send(resultados)
+                res.status(200).send(resultados)
             }
         })
     })
@@ -133,14 +132,28 @@ import { createConnection } from "net";
         let correo=req.body.correo
         let contraseña=req.body.contraseña
         let admi=0
+        
 
         conexionMysql.query("INSERT INTO usuarios(nombres,apellidos,rut,direccion,region,provincia,comuna,correo,contraseña,admi)VALUES('"+nombres+"','"+apellidos+"','"+rut+"','"+direccion+"','"+region+"','"+provincia+"','"+comuna+"','"+correo+"',md5('"+contraseña+"'),'"+admi+"')",(req1:any,res1:any)=>{
             res.status(201).send(JSON.stringify(`Usuario ${nombres} creado con el id: ${res1.insertId}`));
+            console.log("res1",res1)
+
+            
         });
+        
+    });
 
-    
+    app.post("/crearcarro",bodyparser.json(),(req:any,res:any)=>{
+        let id=req.body.id
+        let num=0
+        conexionMysql.query("INSERT INTO carrito(precio_total,id_usuario)VALUES('"+num+"','"+id+"')",(req1:any,res1:any)=>{
+            res.status(201).send(JSON.stringify(`Carrito creadocon id ${res1.insertId}`))
+        });
+    });
 
-});
+    app.post("/agregarcarrito",bodyparser.json(),(req:any,res:any)=>{
+
+    })
 /*
     Debo recordar hacer tsc --watch para que se vaya generando mi archivo js
     y ejecutar node js/api.js para ejecutar el coso este

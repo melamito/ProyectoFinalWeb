@@ -1,0 +1,28 @@
+<div class="contenedor">
+    <h1 class="titulo">Datos de la cuenta</h1>
+    <div class="nombre">
+        <span class="etiqueta">Nombre:</span>
+        <h5 class="dato">
+            {{usuario.nombres}} {{usuario.apellidos}}
+        </h5>
+    </div>
+    <div class="rut">
+        <span class="etiqueta">RUT:</span>
+        <h5 class="dato">
+            {{usuario.rut}}
+        </h5>
+    </div>
+    <div class="direccion">
+        <span class="etiqueta">Direccion:</span>
+        <h5 class="dato">
+            {{usuario.direccion}}
+        </h5>
+    </div>
+    <div class="cerrarsesion">
+        <form [formGroup]="formulario" (ngSubmit)="cerrarSesion($event)">
+            <button type="submit">Cerrar Sesion</button>
+        </form>
+    </div>
+
+
+</div>

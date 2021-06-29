@@ -1,75 +1,62 @@
-.header{
+#header{
     background-color: black;
-    height: 40px;
+    //height: 40px;
     width: 100%;
-}
-
-.menu{
-    width: 100%;
-    background-color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
 }
-
+ul,ol{
+    list-style: none;
+}
+.menu li a{
+    background-color: black;
+    color:#fff;
+    text-decoration: none;
+    font-size: 16px;
+    display:block;
+}
+.menu li a:hover{
+    background-color: #F2F2F2;
+    color:#F2A663;
+}
+.menu > li{
+    float:left;
+}
+.menu li ul{
+    display:none;
+    position:absolute;
+    min-width: 10%;
+}
+.menu li:hover > ul{
+    display:block;
+}
+.menu li ul li{
+    position:relative;
+}
+.menu li ul li ul{
+    right:-80%;
+    top:0px;
+}
 .item{
     width:10%;
     align-items: center;
     text-align: center;
 }
-
-.carrito{
-    width:5%;
-    align-items: center;
-    text-align: center;
-}
-
 .centro{
-    width: 55%;
+    width: 50%;
 }
-
 .categoria{
-    display: inline-flex;
     position: absolute;
     z-index: 100;
 }
-.tipo{
-    text-decoration: none;
-    font-weight: bold;
-    color:#ee852a;
-    font-size:20px;
-}
-.subcategoria{
-    padding-left: 3px; 
-    padding-right:3px;
-    background-color:#F2F2F2;
-    color:#ee852a;
-}
-
-.lista{
-    list-style: none;
-}
-
-.estiloLetras{
-    color:white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
-
 .marca{
-    height: 86%;
     color:white;
     text-align: center;
     text-decoration: none;
 }
-.estiloLetras:hover{
-    background-color:#F2F2F2;
-    color:#F2A663;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
 .link{
     color:#F2A663;   
 }
-
+//ESTILOS BUSCADOR 
 .buscador{
     margin-top: 1%;
     text-align: center;
@@ -90,35 +77,12 @@
     border: 1px solid #F2A663;
     border-radius: 10px;
 }
-
-ng-template{
-    display:hidden;
-}
-
-.categoria:hover{
-   ng-tempale{
-       display:inline-flex
-   }
+.buttonStyle a{
+    text-decoration: none;
+    color:#F2F2F2;
 }
 
 
-/* BUSCADOR BOOTSTRAP 
-.buscador{
-    width: 50%;
-    text-align: center;
-}
-.rectanguloBuscador{
-    border-radius: 10px;
-    width: 50%;
-    border:1px solid gray;
-    margin-top: 3%;
-}
 
-.estiloBoton{
-    margin-top: 3%;
-    background-color: #F2A663;
-    color: #F2F2F2;
-    border: 1px solid #F2A663;
-    border-radius: 10px;
-}
-*/
+
+

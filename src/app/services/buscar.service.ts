@@ -46,11 +46,14 @@ export class BuscarService {
   }
   
   BuscarClienteId(id:number):Observable<any>{
-    return this.servicio.get(`${this.servidor}/buscarusuariorut/${id}`)
+    return this.servicio.get(`${this.servidor}/buscarusuarios/${id}`)
   }
 
   Login(correo:string,clave:string):Observable<any>{
-    console.log("servicoo:",correo)
     return this.servicio.get(`${this.servidor}/login?correo=${JSON.stringify(correo)}&clave=${JSON.stringify(clave)}`,httpOptions)
+  }
+
+  CrearCarrito(usuario:Usuario):Observable<any>{
+    return this.servicio.post(`${this.servidor}/crearcarro`,JSON.stringify(usuario),httpOptions)
   }
 }

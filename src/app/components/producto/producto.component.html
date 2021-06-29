@@ -21,7 +21,9 @@
                 <!------ Si no hay disponibles ------>
                 <div class="texto aviso" *ngIf="producto.cantidad ==0">Producto no disponible!</div>
                 <!------ boton agregar al carrito ------>
-                <button *ngIf="producto.cantidad>0">+Agregar al carrito</button>
+                <form [formGroup]="formulario" (ngSubmit)="carrito($event)">
+                    <button type="submit" *ngIf="producto.cantidad>0" id="botonesAgregar" >+Agregar al carrito</button>
+                </form>
             </div>
         </div>
     </div>

@@ -28,7 +28,7 @@ export class HeatherComponent implements OnInit {
   buscarProducto(){
     var valor:string=this.formulario.get("buscar")?.value;
     this.servicio.data.next(valor);
-    //console.log(this.formulario.get('buscar')?.value);
+    console.log(this.formulario.get('buscar')?.value);
   }
 
 }
